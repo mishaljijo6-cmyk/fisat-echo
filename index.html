@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
@@ -41,7 +40,7 @@
 
     <style>
         /* ============================================================
-           SECTION 1 â€” INTRO OVERLAY & CORE ANIMATION
+           SECTION 1 — INTRO OVERLAY & CORE ANIMATION
            ============================================================ */
         #intro-container {
             position: fixed; inset: 0; background: #000000; z-index: 9999;
@@ -60,7 +59,7 @@
         .page-enter.show { opacity: 1; transform: translateY(0); }
 
         /* ============================================================
-           SECTION 2 â€” SCROLL-REVEAL ANIMATION
+           SECTION 2 — SCROLL-REVEAL ANIMATION
            ============================================================ */
         .reveal {
             opacity: 0; transform: translateY(40px);
@@ -69,7 +68,7 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* ============================================================
-           SECTION 3 â€” HERO EFFECTS & GLOBALS
+           SECTION 3 — HERO EFFECTS & GLOBALS
            ============================================================ */
         @keyframes blobFloat {
             0%, 100% { transform: translateY(0) scale(1); }
@@ -103,7 +102,7 @@
         #toast.show { transform: translateY(0) !important; opacity: 1 !important; }
 
         /* ============================================================
-           SECTION 4 â€” COMPONENT SPECIFIC STYLES
+           SECTION 4 — COMPONENT SPECIFIC STYLES
            ============================================================ */
         
         /* Event Cards */
@@ -146,7 +145,7 @@
         }
         .member-card-wrapper:hover .member-tooltip { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-        /* Mentor Cards â€” iOS-style liquid glass */
+        /* Mentor Cards — iOS-style liquid glass */
         .mentor-card {
             position: relative;
             transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, background 0.45s ease;
@@ -264,7 +263,7 @@
         .ach-swipe-hint { display: none; }
         @media (hover: none) and (max-width: 639px) { .ach-swipe-hint { display: block; } }
 
-        /* RECENT â€” coverflow-style hero slideshow */
+        /* RECENT — coverflow-style hero slideshow */
         .recent-slide {
             position: absolute; top: 0; left: 50%; width: 82%; height: 100%;
             transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.9s ease;
@@ -431,13 +430,13 @@
             <div class="text-center mb-16 reveal">
                 <p class="text-brand-orange text-xs font-bold tracking-[0.25em] uppercase mb-3">What's Happening</p>
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Events</h2>
-                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">From annual tech fests to workshops â€” here's what ECHO is up to.</p>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">From annual tech fests to workshops — here's what ECHO is up to.</p>
             </div>
             
             <div id="events-grid" class="flex flex-wrap justify-center gap-8">
                 <div class="w-full text-center py-16 text-gray-400">
                     <i class="fas fa-circle-notch fa-spin text-3xl mb-3 block text-brand-orange/60"></i>
-                    Loading eventsâ€¦
+                    Loading events…
                 </div>
             </div>
         </div>
@@ -457,7 +456,7 @@
                 <div id="members-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-5xl mx-auto">
                     <div class="col-span-full text-center py-16 text-gray-400">
                         <i class="fas fa-circle-notch fa-spin text-3xl mb-3 block text-brand-orange/60"></i>
-                        Loading membersâ€¦
+                        Loading members…
                     </div>
                 </div>
             </div>
@@ -491,21 +490,21 @@
                 <div id="achievements-list" class="ach-stage">
                     <div class="text-center py-16 text-gray-400 w-full">
                         <i class="fas fa-circle-notch fa-spin text-3xl mb-3 block text-brand-orange/60"></i>
-                        Loading achievementsâ€¦
+                        Loading achievements…
                     </div>
                 </div>
                 <button id="ach-next" onclick="navigateAchievement(1)" class="ach-arrow ach-arrow-right" aria-label="Next achievement"><i class="fas fa-chevron-right"></i></button>
             </div>
             <p id="ach-counter" class="text-center text-xs text-gray-400 mt-2"></p>
             <p class="ach-swipe-hint text-center text-[11px] text-gray-400 mt-1">
-                <i class="fas fa-arrows-left-right mr-1"></i>Swipe to browse &nbsp;â€¢&nbsp; <i class="fas fa-hand-pointer mr-1"></i>Hold to open link
+                <i class="fas fa-arrows-left-right mr-1"></i>Swipe to browse &nbsp;•&nbsp; <i class="fas fa-hand-pointer mr-1"></i>Hold to open link
             </p>
         </div>
     </section>
 
     <!-- Activities Section -->
     <section id="activities" class="py-24 bg-white dark:bg-brand-dark">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <p class="text-brand-orange text-xs font-bold tracking-[0.25em] uppercase mb-3">What We Do</p>
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Activity Reports</h2>
@@ -514,7 +513,7 @@
             <div id="activities-list" class="reveal">
                 <div class="text-center py-16 text-gray-400">
                     <i class="fas fa-circle-notch fa-spin text-3xl mb-3 block text-brand-orange/60"></i>
-                    Loading activitiesâ€¦
+                    Loading activities…
                 </div>
             </div>
         </div>
@@ -523,7 +522,7 @@
     <!-- All Activities Modal -->
     <div id="activities-modal" class="hidden fixed inset-0 z-[1000] flex items-center justify-center p-4 sm:p-6">
         <div id="activities-modal-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer" onclick="closeActivitiesModal()"></div>
-        <div id="activities-modal-content" class="relative bg-white dark:bg-brand-card w-full max-w-2xl max-h-[85vh] rounded-2xl shadow-2xl flex flex-col transform scale-95 opacity-0">
+        <div id="activities-modal-content" class="relative bg-white dark:bg-brand-card w-full max-w-4xl max-h-[85vh] rounded-2xl shadow-2xl flex flex-col transform scale-95 opacity-0">
             <div class="p-5 sm:p-6 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-brand-dark/50 rounded-t-2xl">
                 <div>
                     <h3 class="text-2xl font-extrabold text-gray-900 dark:text-gray-100">All Activities</h3>
@@ -585,7 +584,7 @@
                         </div>
                         <div class="mb-5">
                             <label class="block text-sm font-semibold mb-1.5 text-gray-700 dark:text-gray-300">Message</label>
-                            <textarea id="c-message" rows="4" required placeholder="Your message hereâ€¦" class="w-full px-4 py-2.5 rounded-xl resize-none bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange transition-all duration-200"></textarea>
+                            <textarea id="c-message" rows="4" required placeholder="Your message here…" class="w-full px-4 py-2.5 rounded-xl resize-none bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange transition-all duration-200"></textarea>
                         </div>
                         <button type="submit" id="contact-submit-btn" class="w-full bg-brand-orange hover:bg-yellow-500 text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-brand-orange/40 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2">
                             <i class="fas fa-paper-plane"></i> Send Message
@@ -602,7 +601,7 @@
             <img src="https://lh3.googleusercontent.com/d/1aFFlIwdpDMN-gA4J1w1QKDNFZ_AX4QRa" alt="ECHO Logo" class="h-7 w-auto object-contain">
             <span class="font-bold text-gray-700 dark:text-gray-300">FISAT ECHO</span>
         </div>
-        <p class="mb-3">&copy; 2026â€“2027 ECHO | FISAT. All rights reserved.</p>
+        <p class="mb-3">&copy; 2026–2027 ECHO | FISAT. All rights reserved.</p>
         <p class="mb-4">Email :<a href="mailto:echo@fisat.ac.in">echo@fisat.ac.in</a> </p>
         <div class="flex justify-center items-center gap-4">
             <a href="https://www.instagram.com/echo_fisat?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" aria-label="ECHO FISAT on Instagram"
@@ -1094,12 +1093,38 @@
 
         function buildActivityRowHtml(a, i, total) {
             const hasLink = !!a.link;
-            const dateStr = a.date ? `<span class="text-xs text-gray-400"><i class="fas fa-calendar-alt mr-1"></i>${formatDate(a.date)}</span>` : '';
+            
+            // Format dates
+            let dateStr = '';
+            const start = a.startDate || a.date;
+            if (start && a.endDate) {
+                dateStr = `${formatDate(start)} - ${formatDate(a.endDate)}`;
+            } else if (start) {
+                dateStr = formatDate(start);
+            }
+            const dateHtml = dateStr ? `<span class="text-xs text-gray-500 dark:text-gray-400 mr-4"><i class="fas fa-calendar-alt mr-1.5 text-brand-orange"></i>${dateStr}</span>` : '';
+            
+            // Format duration
+            let detailsStr = [];
+            if (a.durationDays) detailsStr.push(`${a.durationDays} Day${a.durationDays>1?'s':''}`);
+            if (a.durationHours) detailsStr.push(`${a.durationHours} Hr${a.durationHours>1?'s':''}`);
+            const durationHtml = detailsStr.length ? `<span class="text-xs text-gray-500 dark:text-gray-400 mr-4"><i class="fas fa-clock mr-1.5 text-brand-orange"></i>${detailsStr.join(', ')}</span>` : '';
+            
+            // Format coordinators
+            const coordHtml = a.coordinators ? `<span class="text-xs text-gray-500 dark:text-gray-400 mr-4"><i class="fas fa-user-tie mr-1.5 text-brand-orange"></i>${escHtml(a.coordinators)}</span>` : '';
+
             return `
-            <div class="flex items-center justify-between p-5 gap-4 ${i < total - 1 ? 'border-b border-gray-100 dark:border-gray-800' : ''} hover:bg-brand-orange/5 dark:hover:bg-brand-orange/10 transition-colors group ${hasLink ? 'activity-row-link' : 'activity-row-nolink'}"
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between p-5 gap-4 ${i < total - 1 ? 'border-b border-gray-100 dark:border-gray-800' : ''} hover:bg-brand-orange/5 dark:hover:bg-brand-orange/10 transition-colors group ${hasLink ? 'activity-row-link' : 'activity-row-nolink'}"
                  ${hasLink ? `onclick="window.open('${escHtml(a.link)}','_blank','noopener')"` : ''}>
-                <div class="flex flex-col min-w-0 flex-1"><span class="font-semibold text-base uppercase tracking-wide group-hover:text-brand-orange transition-colors break-words">${escHtml(a.title)}</span>${dateStr}</div>
-                ${hasLink ? `<a href="${escHtml(a.link)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="flex-shrink-0 px-5 py-2 border border-brand-orange text-brand-orange text-sm font-bold rounded-lg hover:bg-brand-orange hover:text-white hover:-translate-y-0.5 transition-all duration-200 shadow hover:shadow-lg">View <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>` : ''}
+                <div class="flex flex-col min-w-0 flex-1">
+                    <span class="font-bold text-base md:text-lg tracking-wide group-hover:text-brand-orange transition-colors break-words mb-2">${escHtml(a.title)}</span>
+                    <div class="flex flex-wrap items-center gap-y-2 mt-1">
+                        ${dateHtml}
+                        ${durationHtml}
+                        ${coordHtml}
+                    </div>
+                </div>
+                ${hasLink ? `<a href="${escHtml(a.link)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="flex-shrink-0 px-5 py-2 border border-brand-orange text-brand-orange text-sm font-bold rounded-lg hover:bg-brand-orange hover:text-white hover:-translate-y-0.5 transition-all duration-200 shadow hover:shadow-lg w-fit self-start sm:self-center">View <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>` : ''}
             </div>`;
         }
 
@@ -1268,7 +1293,7 @@
             const message = document.getElementById('c-message').value.trim();
 
             if (!name || !email || !message) return;
-            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i>Sendingâ€¦';
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i>Sending…';
             btn.disabled = true;
 
             try {
