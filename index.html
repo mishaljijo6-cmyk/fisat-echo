@@ -41,7 +41,7 @@
 
     <style>
         /* ============================================================
-           SECTION 1 — INTRO OVERLAY & CORE ANIMATION
+           SECTION 1 â€” INTRO OVERLAY & CORE ANIMATION
            ============================================================ */
         #intro-container {
             position: fixed; inset: 0; background: #000000; z-index: 9999;
@@ -60,7 +60,7 @@
         .page-enter.show { opacity: 1; transform: translateY(0); }
 
         /* ============================================================
-           SECTION 2 — SCROLL-REVEAL ANIMATION
+           SECTION 2 â€” SCROLL-REVEAL ANIMATION
            ============================================================ */
         .reveal {
             opacity: 0; transform: translateY(40px);
@@ -69,7 +69,7 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* ============================================================
-           SECTION 3 — HERO EFFECTS & GLOBALS
+           SECTION 3 â€” HERO EFFECTS & GLOBALS
            ============================================================ */
         @keyframes blobFloat {
             0%, 100% { transform: translateY(0) scale(1); }
@@ -103,7 +103,7 @@
         #toast.show { transform: translateY(0) !important; opacity: 1 !important; }
 
         /* ============================================================
-           SECTION 4 — COMPONENT SPECIFIC STYLES
+           SECTION 4 â€” COMPONENT SPECIFIC STYLES
            ============================================================ */
         
         /* Event Cards */
@@ -146,7 +146,7 @@
         }
         .member-card-wrapper:hover .member-tooltip { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-        /* Mentor Cards — iOS-style liquid glass */
+        /* Mentor Cards â€” iOS-style liquid glass */
         .mentor-card {
             position: relative;
             transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, background 0.45s ease;
@@ -264,7 +264,7 @@
         .ach-swipe-hint { display: none; }
         @media (hover: none) and (max-width: 639px) { .ach-swipe-hint { display: block; } }
 
-        /* RECENT — coverflow-style hero slideshow */
+        /* RECENT â€” coverflow-style hero slideshow */
         .recent-slide {
             position: absolute; top: 0; left: 50%; width: 82%; height: 100%;
             transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.9s ease;
@@ -431,13 +431,13 @@
             <div class="text-center mb-16 reveal">
                 <p class="text-brand-orange text-xs font-bold tracking-[0.25em] uppercase mb-3">What's Happening</p>
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Events</h2>
-                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">From annual tech fests to workshops — here's what ECHO is up to.</p>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">From annual tech fests to workshops â€” here's what ECHO is up to.</p>
             </div>
             
             <div id="events-grid" class="flex flex-wrap justify-center gap-8">
                 <div class="w-full text-center py-16 text-gray-400">
                     <i class="fas fa-circle-notch fa-spin text-3xl mb-3 block text-brand-orange/60"></i>
-                    Loading events…
+                    Loading eventsâ€¦
                 </div>
             </div>
         </div>
@@ -457,7 +457,7 @@
                 <div id="members-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-5xl mx-auto">
                     <div class="col-span-full text-center py-16 text-gray-400">
                         <i class="fas fa-circle-notch fa-spin text-3xl mb-3 block text-brand-orange/60"></i>
-                        Loading members…
+                        Loading membersâ€¦
                     </div>
                 </div>
             </div>
@@ -491,14 +491,14 @@
                 <div id="achievements-list" class="ach-stage">
                     <div class="text-center py-16 text-gray-400 w-full">
                         <i class="fas fa-circle-notch fa-spin text-3xl mb-3 block text-brand-orange/60"></i>
-                        Loading achievements…
+                        Loading achievementsâ€¦
                     </div>
                 </div>
                 <button id="ach-next" onclick="navigateAchievement(1)" class="ach-arrow ach-arrow-right" aria-label="Next achievement"><i class="fas fa-chevron-right"></i></button>
             </div>
             <p id="ach-counter" class="text-center text-xs text-gray-400 mt-2"></p>
             <p class="ach-swipe-hint text-center text-[11px] text-gray-400 mt-1">
-                <i class="fas fa-arrows-left-right mr-1"></i>Swipe to browse &nbsp;•&nbsp; <i class="fas fa-hand-pointer mr-1"></i>Hold to open link
+                <i class="fas fa-arrows-left-right mr-1"></i>Swipe to browse &nbsp;â€¢&nbsp; <i class="fas fa-hand-pointer mr-1"></i>Hold to open link
             </p>
         </div>
     </section>
@@ -514,7 +514,7 @@
             <div id="activities-list" class="reveal">
                 <div class="text-center py-16 text-gray-400">
                     <i class="fas fa-circle-notch fa-spin text-3xl mb-3 block text-brand-orange/60"></i>
-                    Loading activities…
+                    Loading activitiesâ€¦
                 </div>
             </div>
         </div>
@@ -585,7 +585,7 @@
                         </div>
                         <div class="mb-5">
                             <label class="block text-sm font-semibold mb-1.5 text-gray-700 dark:text-gray-300">Message</label>
-                            <textarea id="c-message" rows="4" required placeholder="Your message here…" class="w-full px-4 py-2.5 rounded-xl resize-none bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange transition-all duration-200"></textarea>
+                            <textarea id="c-message" rows="4" required placeholder="Your message hereâ€¦" class="w-full px-4 py-2.5 rounded-xl resize-none bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange transition-all duration-200"></textarea>
                         </div>
                         <button type="submit" id="contact-submit-btn" class="w-full bg-brand-orange hover:bg-yellow-500 text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-brand-orange/40 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2">
                             <i class="fas fa-paper-plane"></i> Send Message
@@ -602,7 +602,7 @@
             <img src="https://lh3.googleusercontent.com/d/1aFFlIwdpDMN-gA4J1w1QKDNFZ_AX4QRa" alt="ECHO Logo" class="h-7 w-auto object-contain">
             <span class="font-bold text-gray-700 dark:text-gray-300">FISAT ECHO</span>
         </div>
-        <p class="mb-3">&copy; 2026–2027 ECHO | FISAT. All rights reserved.</p>
+        <p class="mb-3">&copy; 2026â€“2027 ECHO | FISAT. All rights reserved.</p>
         <p class="mb-4">Email :<a href="mailto:echo@fisat.ac.in">echo@fisat.ac.in</a> </p>
         <div class="flex justify-center items-center gap-4">
             <a href="https://www.instagram.com/echo_fisat?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" aria-label="ECHO FISAT on Instagram"
@@ -999,4 +999,561 @@
             document.getElementById('achievement-modal-desc').textContent = a.description || '';
 
             const imgWrap = document.getElementById('achievement-modal-image-wrap');
-            const img = document.getElementById('achievement-modal-im
+            const img = document.getElementById('achievement-modal-image');
+            if (a.image) {
+                img.src = a.image;
+                img.alt = a.title || '';
+                imgWrap.classList.remove('hidden');
+            } else {
+                imgWrap.classList.add('hidden');
+            }
+
+            const linkBtn = document.getElementById('achievement-modal-link');
+            if (a.link) {
+                linkBtn.href = a.link;
+                linkBtn.classList.remove('hidden');
+                linkBtn.classList.add('flex');
+            } else {
+                linkBtn.classList.add('hidden');
+                linkBtn.classList.remove('flex');
+            }
+
+            const modal = document.getElementById('achievement-modal');
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.add('open-modal');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAchievementModal() {
+            const modal = document.getElementById('achievement-modal');
+            modal.classList.remove('open-modal');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        (function setupAchievementTouch() {
+            const container = document.getElementById('achievements-list');
+            if (!container) return;
+
+            let startX = 0, startY = 0, moved = false, gestureHandled = false;
+            let holdTimer = null;
+            const MOVE_CANCEL_PX = 10;
+            const SWIPE_PX = 45;
+            const HOLD_MS = 450;
+
+            function swallowNextClick() {
+                const swallow = (ev) => { ev.preventDefault(); ev.stopPropagation(); };
+                container.addEventListener('click', swallow, { capture: true, once: true });
+            }
+
+            container.addEventListener('touchstart', (e) => {
+                if (!e.touches || e.touches.length !== 1) return;
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+                moved = false;
+                gestureHandled = false;
+                clearTimeout(holdTimer);
+                holdTimer = setTimeout(() => {
+                    if (!moved) {
+                        gestureHandled = true;
+                        if (navigator.vibrate) navigator.vibrate(12);
+                        openAchievementLink(achIndex);
+                    }
+                }, HOLD_MS);
+            }, { passive: true });
+
+            container.addEventListener('touchmove', (e) => {
+                if (!e.touches || e.touches.length !== 1) return;
+                const dx = e.touches[0].clientX - startX;
+                const dy = e.touches[0].clientY - startY;
+                if (Math.abs(dx) > MOVE_CANCEL_PX || Math.abs(dy) > MOVE_CANCEL_PX) {
+                    moved = true;
+                    clearTimeout(holdTimer);
+                }
+            }, { passive: true });
+
+            container.addEventListener('touchend', (e) => {
+                clearTimeout(holdTimer);
+                if (gestureHandled) { swallowNextClick(); return; }
+
+                const touch = e.changedTouches && e.changedTouches[0];
+                const dx = touch ? touch.clientX - startX : 0;
+                const dy = touch ? touch.clientY - startY : 0;
+
+                if (Math.abs(dx) > SWIPE_PX && Math.abs(dx) > Math.abs(dy)) {
+                    swallowNextClick();
+                    navigateAchievement(dx < 0 ? 1 : -1);
+                }
+            });
+
+            container.addEventListener('touchcancel', () => clearTimeout(holdTimer));
+        })();
+
+        function buildActivityRowHtml(a, i, total) {
+            const hasLink = !!a.link;
+            const dateStr = a.date ? `<span class="text-xs text-gray-400"><i class="fas fa-calendar-alt mr-1"></i>${formatDate(a.date)}</span>` : '';
+            return `
+            <div class="flex items-center justify-between p-5 gap-4 ${i < total - 1 ? 'border-b border-gray-100 dark:border-gray-800' : ''} hover:bg-brand-orange/5 dark:hover:bg-brand-orange/10 transition-colors group ${hasLink ? 'activity-row-link' : 'activity-row-nolink'}"
+                 ${hasLink ? `onclick="window.open('${escHtml(a.link)}','_blank','noopener')"` : ''}>
+                <div class="flex flex-col min-w-0 flex-1"><span class="font-semibold text-base uppercase tracking-wide group-hover:text-brand-orange transition-colors break-words">${escHtml(a.title)}</span>${dateStr}</div>
+                ${hasLink ? `<a href="${escHtml(a.link)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="flex-shrink-0 px-5 py-2 border border-brand-orange text-brand-orange text-sm font-bold rounded-lg hover:bg-brand-orange hover:text-white hover:-translate-y-0.5 transition-all duration-200 shadow hover:shadow-lg">View <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>` : ''}
+            </div>`;
+        }
+
+        function renderActivities() {
+            const wrap = document.getElementById('activities-list');
+            if (state.activities.length === 0) {
+                wrap.innerHTML = `<div class="text-center py-16 text-gray-400">No activities posted yet.</div>`;
+                return;
+            }
+
+            if (state.activities.length === 1) {
+                wrap.innerHTML = `
+                    <div class="bg-white dark:bg-brand-card rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-800">
+                        ${buildActivityRowHtml(state.activities[0], 0, 1)}
+                    </div>`;
+                return;
+            }
+
+            wrap.innerHTML = `
+                <div onclick="openActivitiesModal()" class="cursor-pointer bg-white dark:bg-brand-card rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 p-8 flex items-center justify-between gap-4 hover:-translate-y-1 hover:shadow-2xl hover:border-brand-orange transition-all duration-300 group">
+                    <div>
+                        <h3 class="text-xl font-bold group-hover:text-brand-orange transition-colors mb-1">View All Activities</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">${state.activities.length} activities posted so far</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-full bg-brand-orange/10 text-brand-orange flex items-center justify-center group-hover:bg-brand-orange group-hover:text-white transition-colors flex-shrink-0 shadow-sm">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>`;
+        }
+
+        function openActivitiesModal() {
+            const listEl = document.getElementById('activities-modal-list');
+            const countEl = document.getElementById('activities-modal-count');
+            if (!listEl) return;
+            listEl.innerHTML = state.activities.map((a, i) => buildActivityRowHtml(a, i, state.activities.length)).join('');
+            if (countEl) countEl.textContent = `${state.activities.length} Activities`;
+
+            const modal = document.getElementById('activities-modal');
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.add('open-modal');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeActivitiesModal() {
+            const modal = document.getElementById('activities-modal');
+            modal.classList.remove('open-modal');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // --- Recent Slideshow Integration ---
+        let recentIndex = 0;
+        let recentTimer = null;
+        const RECENT_INTERVAL = 3000;
+
+        function renderRecent() {
+            const stage = document.getElementById('recent-stage');
+            const dotsWrap = document.getElementById('recent-dots');
+            if (!stage) return;
+            
+            // Limit to max 10
+            const recentsToRender = state.recents.slice(0, 10);
+
+            if (recentsToRender.length === 0) {
+                stage.innerHTML = `<div class="flex items-center justify-center w-full h-full text-gray-400 text-sm">No recent updates.</div>`;
+                dotsWrap.innerHTML = '';
+                document.getElementById('recent-prev').classList.add('hidden');
+                document.getElementById('recent-next').classList.add('hidden');
+                return;
+            }
+
+            stage.innerHTML = recentsToRender.map((r) => {
+                const hasText = r.title || r.description;
+                const textHtml = hasText ? `
+                    <div class="flex-shrink-0 text-center px-4 pb-4 pt-2 text-white text-shadow-sm">
+                        ${r.title ? `<h4 class="font-extrabold text-lg sm:text-xl leading-tight mb-1">${escHtml(r.title)}</h4>` : ''}
+                        ${r.description ? `<p class="text-xs sm:text-sm text-gray-100 line-clamp-2">${escHtml(r.description)}</p>` : ''}
+                    </div>
+                ` : '';
+                
+                return `
+                <div class="recent-slide liquid-glass">
+                    <div class="bg-fill" style="background-image:url('${escHtml(r.image)}')"></div>
+                    <div class="fg-content p-2">
+                        <div class="flex-1 min-h-0 flex items-center justify-center p-2">
+                             <img src="${escHtml(r.image)}" alt="${escHtml(r.title || '')}" onerror="this.style.display='none'">
+                        </div>
+                        ${textHtml}
+                    </div>
+                </div>
+            `}).join('');
+
+            dotsWrap.classList.remove('hidden');
+            dotsWrap.innerHTML = recentsToRender.map((_, i) =>
+                `<button class="recent-dot" onclick="goToRecentSlide(${i})" aria-label="Slide ${i + 1}"></button>`
+            ).join('');
+
+            if (recentsToRender.length <= 1) {
+                document.getElementById('recent-prev').classList.add('hidden');
+                document.getElementById('recent-next').classList.add('hidden');
+                dotsWrap.classList.add('hidden');
+            } else {
+                document.getElementById('recent-prev').classList.remove('hidden');
+                document.getElementById('recent-next').classList.remove('hidden');
+            }
+
+            if (recentIndex >= recentsToRender.length) recentIndex = 0;
+
+            updateRecentPositions();
+            startRecentTimer();
+        }
+
+        function updateRecentPositions() {
+            const slides = document.querySelectorAll('.recent-slide');
+            const dots = document.querySelectorAll('.recent-dot');
+            const n = slides.length;
+            if (!n) return;
+
+            slides.forEach((s, i) => {
+                let offset = i - recentIndex;
+                if (offset > n / 2) offset -= n;
+                if (offset < -n / 2) offset += n;
+
+                let tx, scale, rot, opacity, z, pe;
+                if (offset === 0) {
+                    tx = 0; scale = 1; rot = 0; opacity = 1; z = 5; pe = 'auto';
+                } else if (Math.abs(offset) === 1) {
+                    tx = offset * 58; scale = 0.8; rot = offset * -30; opacity = 0.45; z = 3; pe = 'none';
+                } else {
+                    tx = offset * 85; scale = 0.6; rot = offset * -30; opacity = 0; z = 1; pe = 'none';
+                }
+
+                s.style.transform = `translateX(-50%) translateX(${tx}%) scale(${scale}) rotateY(${rot}deg)`;
+                s.style.opacity = opacity;
+                s.style.zIndex = z;
+                s.style.pointerEvents = pe;
+            });
+
+            dots.forEach((d, i) => d.classList.toggle('active', i === recentIndex));
+        }
+
+        function showRecentSlide(index) {
+            const n = document.querySelectorAll('.recent-slide').length;
+            if (!n) return;
+            recentIndex = (index + n) % n;
+            updateRecentPositions();
+        }
+        function navigateRecent(step) { showRecentSlide(recentIndex + step); resetRecentTimer(); }
+        function goToRecentSlide(i) { showRecentSlide(i); resetRecentTimer(); }
+        function startRecentTimer() {
+            clearInterval(recentTimer);
+            const n = document.querySelectorAll('.recent-slide').length;
+            if (n > 1) recentTimer = setInterval(() => showRecentSlide(recentIndex + 1), RECENT_INTERVAL);
+        }
+        function resetRecentTimer() { startRecentTimer(); }
+
+        async function handleContactSubmit(event) {
+            event.preventDefault();
+            const btn = document.getElementById('contact-submit-btn');
+            const origTxt = btn.innerHTML;
+            const name = document.getElementById('c-name').value.trim();
+            const email = document.getElementById('c-email').value.trim();
+            const message = document.getElementById('c-message').value.trim();
+
+            if (!name || !email || !message) return;
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i>Sendingâ€¦';
+            btn.disabled = true;
+
+            try {
+                await col('contact_messages').add({ name, email, message, read: false, timestamp: firebase.firestore.FieldValue.serverTimestamp() });
+                document.getElementById('contact-form').classList.add('hidden');
+                document.getElementById('contact-success').classList.remove('hidden');
+            } catch (err) {
+                console.error('[ECHO] Contact form error:', err);
+                showToast('Failed to send message. Please try again.', 'error');
+                btn.innerHTML = origTxt;
+                btn.disabled = false;
+            }
+        }
+
+        const revealObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); obs.unobserve(entry.target); } });
+        }, { threshold: 0.1 });
+        window.addEventListener('load', () => document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el)));
+
+        if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        }
+        document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+        document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+
+        let toastTimer;
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = message;
+            document.getElementById('toast-icon').className = type === 'error' ? 'fas fa-times-circle text-red-400 text-xl' : 'fas fa-check-circle text-brand-orange text-xl';
+            toast.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+
+        function startEchoIntroAnimation() {
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d', { alpha: false });
+            const introContainer = document.getElementById('intro-container');
+
+            document.body.style.overflow = 'hidden';
+
+            let logicalWidth, logicalHeight;
+            let particles = [];
+
+            const formDuration = 4733; 
+            const revealStart = 0.66;  
+            const holdDuration = 1267; 
+            const totalDuration = formDuration + holdDuration;
+
+            let startTime = null;
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+            function resize() {
+                logicalWidth = window.innerWidth;
+                logicalHeight = window.innerHeight;
+                canvas.width = logicalWidth * dpr;
+                canvas.height = logicalHeight * dpr;
+                ctx.setTransform(1, 0, 0, 1, 0, 0);
+                ctx.scale(dpr, dpr);
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            const logoSize = 600;
+            const tempCanvas = document.createElement('canvas');
+            const tempCtx = tempCanvas.getContext('2d', { willReadFrequently: true });
+            tempCanvas.width = logoSize;
+            tempCanvas.height = logoSize;
+
+            const cx = logoSize / 2;
+            const cy = logoSize / 2 - 48;
+
+            const orangeColor = '#FFB300';
+            const whiteColor = '#FFFFFF';
+
+            function drawCrescent(context, x, y, width, height, facing, color) {
+                context.fillStyle = color;
+                context.beginPath();
+                if (facing === 'left') {
+                    context.moveTo(x, y - height / 2);
+                    context.bezierCurveTo(x + width, y - height / 3, x + width, y + height / 3, x, y + height / 2);
+                    context.bezierCurveTo(x + width * 0.5, y + height / 3, x + width * 0.5, y - height / 3, x, y - height / 2);
+                } else {
+                    context.moveTo(x, y - height / 2);
+                    context.bezierCurveTo(x - width, y - height / 3, x - width, y + height / 3, x, y + height / 2);
+                    context.bezierCurveTo(x - width * 0.5, y + height / 3, x - width * 0.5, y - height / 3, x, y - height / 2);
+                }
+                context.fill();
+            }
+
+            const s = logoSize / 500;
+            drawCrescent(tempCtx, cx - 95 * s, cy, 25 * s, 80 * s, 'right', whiteColor);
+            drawCrescent(tempCtx, cx - 135 * s, cy, 30 * s, 110 * s, 'right', whiteColor);
+            drawCrescent(tempCtx, cx + 95 * s, cy, 25 * s, 80 * s, 'left', orangeColor);
+            drawCrescent(tempCtx, cx + 135 * s, cy, 30 * s, 110 * s, 'left', orangeColor);
+
+            tempCtx.fillStyle = orangeColor;
+            tempCtx.beginPath();
+            tempCtx.arc(cx, cy, 68 * s, 0, Math.PI * 2);
+            tempCtx.fill();
+
+            tempCtx.globalCompositeOperation = 'destination-out';
+            tempCtx.fillRect(cx - 75 * s, cy - 12 * s, 150 * s, 24 * s);
+
+            tempCtx.globalCompositeOperation = 'source-over';
+            tempCtx.fillRect(cx - 10 * s, cy + 12 * s, 115 * s, 20 * s);
+
+            tempCtx.fillStyle = whiteColor;
+            tempCtx.font = `900 ${90 * s}px "Arial Black", Arial, sans-serif`;
+            tempCtx.textAlign = 'center';
+            tempCtx.textBaseline = 'top';
+            if (tempCtx.letterSpacing !== undefined) tempCtx.letterSpacing = `${3 * s}px`;
+            tempCtx.fillText('ECHO', cx, cy + 126 * s);
+
+            const imgData = tempCtx.getImageData(0, 0, logoSize, logoSize).data;
+            const scale = (logicalWidth < 600) ? (logicalWidth * 0.72) / logoSize : (logoSize > logicalHeight * 0.8 ? (logicalHeight * 0.6) / logoSize : 1);
+            const offsetX = (logicalWidth - (logoSize * scale)) / 2;
+            const offsetY = (logicalHeight - (logoSize * scale)) / 2;
+
+            const candidates = [];
+            const gridStep = 3;
+            for (let y = 0; y < logoSize; y += gridStep) {
+                for (let x = 0; x < logoSize; x += gridStep) {
+                    const index = (y * logoSize + x) * 4;
+                    const alpha = imgData[index + 3];
+                    const r = imgData[index], g = imgData[index + 1], b = imgData[index + 2];
+                    if (alpha > 60 && (r > 10 || g > 10 || b > 10)) {
+                        candidates.push({ x, y, r, g, b });
+                    }
+                }
+            }
+            for (let i = candidates.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
+            }
+
+            const targetParticleCount = Math.min(candidates.length, logicalWidth < 600 ? 130 : 200);
+            const chosen = candidates.slice(0, targetParticleCount);
+
+            const centerTX = (cx * scale) + offsetX;
+            const centerTY = (cy * scale) + offsetY;
+            const maxRadius = Math.max(logicalWidth, logicalHeight) * 0.75;
+
+            chosen.forEach(({ x, y, r, g, b }) => {
+                const targetX = (x * scale) + offsetX;
+                const targetY = (y * scale) + offsetY;
+
+                const angle = Math.random() * Math.PI * 2;
+                const dist = maxRadius * (0.55 + Math.random() * 0.55);
+                const startX = centerTX + Math.cos(angle) * dist;
+                const startY = centerTY + Math.sin(angle) * dist;
+
+                const bow = 0.18 + Math.random() * 0.22;
+                const midX = (startX + targetX) / 2;
+                const midY = (startY + targetY) / 2;
+                const nx = -(targetY - startY);
+                const ny = (targetX - startX);
+                const nlen = Math.hypot(nx, ny) || 1;
+                const cpX = midX + (nx / nlen) * dist * bow * (Math.random() > 0.5 ? 1 : -1);
+                const cpY = midY + (ny / nlen) * dist * bow * (Math.random() > 0.5 ? 1 : -1);
+
+                const distFromCenter = Math.hypot(targetX - centerTX, targetY - centerTY);
+                const maxDistFromCenter = Math.hypot(logoSize * scale / 2, logoSize * scale / 2) + 1;
+                const radialDelay = (1 - distFromCenter / maxDistFromCenter) * 0.35;
+                const jitterDelay = Math.random() * 0.25;
+
+                const travelDist = Math.hypot(targetX - startX, targetY - startY) || 1;
+                const dirX = (targetX - startX) / travelDist;
+                const dirY = (targetY - startY) / travelDist;
+                const windPerpX = -dirY;
+                const windPerpY = dirX;
+                const windAmp = dist * (0.06 + Math.random() * 0.10);
+                const windFreq = 0.8 + Math.random() * 1.1;
+                const windPhase = Math.random() * Math.PI * 2;
+
+                particles.push({
+                    targetX, targetY, startX, startY, cpX, cpY,
+                    windPerpX, windPerpY, windAmp, windFreq, windPhase,
+                    color: `rgb(${r}, ${g}, ${b})`,
+                    size: (Math.random() * 1.6 + 1.1) * scale,
+                    delay: Math.min(radialDelay + jitterDelay, 0.55)
+                });
+            });
+
+            function easeOutExpo(t) { return t >= 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+            function smoothstep(t) { return t * t * (3 - 2 * t); }
+
+            requestAnimationFrame(animate);
+
+            function animate(timestamp) {
+                if (!startTime) { startTime = timestamp; }
+                const elapsed = timestamp - startTime;
+
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.globalAlpha = 1;
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.22)';
+                ctx.fillRect(0, 0, logicalWidth, logicalHeight);
+
+                if (elapsed < formDuration) {
+                    const progress = elapsed / formDuration;
+
+                    let revealT = 0;
+                    if (progress > revealStart) {
+                        revealT = (progress - revealStart) / (1 - revealStart);
+                        ctx.globalAlpha = smoothstep(revealT);
+                        ctx.globalCompositeOperation = 'source-over';
+                        ctx.drawImage(tempCanvas, offsetX, offsetY, logoSize * scale, logoSize * scale);
+                    }
+
+                    ctx.globalCompositeOperation = 'lighter';
+                    const dotFadeOut = 1 - smoothstep(revealT);
+
+                    particles.forEach(p => {
+                        let pProgress = (progress - p.delay) / (1 - p.delay);
+                        pProgress = Math.max(0, Math.min(pProgress, 1));
+                        if (pProgress <= 0) return;
+
+                        const eased = easeOutExpo(pProgress);
+                        const inv = 1 - eased;
+
+                        const baseX = (inv * inv * p.startX) + (2 * inv * eased * p.cpX) + (eased * eased * p.targetX);
+                        const baseY = (inv * inv * p.startY) + (2 * inv * eased * p.cpY) + (eased * eased * p.targetY);
+
+                        const decay = (1 - eased) * (1 - eased);
+                        const wind = Math.sin(pProgress * p.windFreq * Math.PI * 2 + p.windPhase) * p.windAmp * decay;
+                        const currentX = baseX + p.windPerpX * wind;
+                        const currentY = baseY + p.windPerpY * wind;
+
+                        const fadeIn = smoothstep(Math.min(pProgress / 0.2, 1)) * dotFadeOut;
+                        if (fadeIn <= 0.001) return;
+
+                        ctx.fillStyle = p.color;
+                        ctx.globalAlpha = fadeIn * 0.35;
+                        ctx.beginPath();
+                        ctx.arc(currentX, currentY, p.size * 2.4, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        ctx.globalAlpha = fadeIn;
+                        ctx.beginPath();
+                        ctx.arc(currentX, currentY, p.size * 1.2, 0, Math.PI * 2);
+                        ctx.fill();
+                    });
+
+                    requestAnimationFrame(animate);
+
+                } else if (elapsed < totalDuration) {
+                    const holdProgress = (elapsed - formDuration) / holdDuration;
+                    const pulse = 0.85 + Math.sin(holdProgress * Math.PI) * 0.15;
+                    const zoomScale = 1 + easeOutExpo(Math.min(holdProgress / 0.9, 1)) * 0.12;
+
+                    ctx.save();
+                    ctx.translate(centerTX, centerTY);
+                    ctx.scale(zoomScale, zoomScale);
+                    ctx.translate(-centerTX, -centerTY);
+
+                    ctx.globalAlpha = 1;
+                    ctx.globalCompositeOperation = 'source-over';
+                    ctx.drawImage(tempCanvas, offsetX, offsetY, logoSize * scale, logoSize * scale);
+
+                    ctx.globalCompositeOperation = 'lighter';
+                    ctx.globalAlpha = (pulse - 0.85) * 1.2;
+                    ctx.filter = 'blur(6px)';
+                    ctx.drawImage(tempCanvas, offsetX, offsetY, logoSize * scale, logoSize * scale);
+                    ctx.filter = 'none';
+                    ctx.restore();
+
+                    requestAnimationFrame(animate);
+
+                } else {
+                    introContainer.style.transform = 'scale(1.35)';
+                    introContainer.style.opacity = '0';
+
+                    document.querySelectorAll('.page-enter').forEach(el => el.classList.add('show'));
+
+                    setTimeout(() => {
+                        introContainer.remove();
+                        document.body.style.overflow = 'auto';
+                    }, 2250);
+                }
+            }
+        }
+        document.addEventListener('DOMContentLoaded', startEchoIntroAnimation);
+    </script>
+</body>
+</html>
