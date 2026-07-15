@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
@@ -41,8 +42,6 @@
     <style>
         /* ============================================================
            SECTION 1 — INTRO OVERLAY & CORE ANIMATION
-           (Particle-formation intro: dots flow together to build the
-           ECHO logo, hold with a soft zoom, then cinematically exit.)
            ============================================================ */
         #intro-container {
             position: fixed; inset: 0; background: #000000; z-index: 9999;
@@ -170,47 +169,22 @@
                 inset 0 1px 0 rgba(255, 255, 255, 0.06),
                 inset 0 0 0 1px rgba(255, 255, 255, 0.04);
         }
-        /* Specular highlight sweeping across the glass surface */
         .mentor-card::before {
-            content: '';
-            position: absolute;
-            top: -60%;
-            left: -20%;
-            width: 60%;
-            height: 220%;
-            background: linear-gradient(
-                115deg,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.35) 45%,
-                rgba(255, 255, 255, 0) 60%
-            );
-            transform: rotate(8deg) translateX(-40%);
-            transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-            pointer-events: none;
-            z-index: 1;
+            content: ''; position: absolute; top: -60%; left: -20%; width: 60%; height: 220%;
+            background: linear-gradient(115deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 60%);
+            transform: rotate(8deg) translateX(-40%); transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; z-index: 1;
         }
         .dark .mentor-card::before {
-            background: linear-gradient(
-                115deg,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.10) 45%,
-                rgba(255, 255, 255, 0) 60%
-            );
+            background: linear-gradient(115deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.10) 45%, rgba(255, 255, 255, 0) 60%);
         }
         .mentor-card:hover::before { transform: rotate(8deg) translateX(220%); }
         .mentor-card > * { position: relative; z-index: 2; }
         .mentor-card:hover {
             transform: translateY(-8px) scale(1.015);
-            box-shadow:
-                0 20px 48px rgba(245, 158, 11, 0.22),
-                inset 0 1px 0 rgba(255, 255, 255, 0.9),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 48px rgba(245, 158, 11, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
         }
         .dark .mentor-card:hover {
-            box-shadow:
-                0 20px 48px rgba(245, 158, 11, 0.18),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+            box-shadow: 0 20px 48px rgba(245, 158, 11, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
         }
         .mentor-card:hover .profile-badge { opacity: 1; transform: scale(1); }
         .mentor-card:hover .member-tooltip { opacity: 1; transform: translateX(-50%) translateY(0); }
@@ -229,63 +203,26 @@
         #achievement-modal-backdrop { transition: opacity 0.3s ease; opacity: 0; }
         #achievement-modal.open-modal #achievement-modal-backdrop { opacity: 1; }
 
-        /* Achievements: clean centered card stack — cards sit directly behind
-           one another (no diagonal fan) for a tidy, professional look. */
-        .ach-stage {
-            position: relative;
-            padding: 0.5rem 0.5rem 2.25rem;
-        }
-        .ach-card-slot {
-            width: 100%;
-            max-width: 480px;
-            display: flex;
-            flex-direction: column;
-        }
-        .ach-front {
-            position: relative;
-            z-index: 10;
-            margin: 0 auto;
-        }
-        .ach-peek {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            pointer-events: none;
-            user-select: none;
-        }
-        /* Directly behind the front card — centered, only depth (scale + Y offset + fade) changes */
-        .ach-peek-right {
-            z-index: 3;
-            transform: translateX(-50%) translateY(14px) scale(0.95);
-            opacity: 0.55;
-        }
-        .ach-peek-left {
-            z-index: 2;
-            transform: translateX(-50%) translateY(26px) scale(0.90);
-            opacity: 0.32;
-        }
+        .ach-stage { position: relative; padding: 0.5rem 0.5rem 2.25rem; }
+        .ach-card-slot { width: 100%; max-width: 480px; display: flex; flex-direction: column; }
+        .ach-front { position: relative; z-index: 10; margin: 0 auto; }
+        .ach-peek { position: absolute; top: 0; left: 50%; pointer-events: none; user-select: none; }
+        .ach-peek-right { z-index: 3; transform: translateX(-50%) translateY(14px) scale(0.95); opacity: 0.55; }
+        .ach-peek-left { z-index: 2; transform: translateX(-50%) translateY(26px) scale(0.90); opacity: 0.32; }
 
-        /* Liquid glass material */
         .liquid-glass {
-            position: relative;
-            border-radius: 28px;
+            position: relative; border-radius: 28px; overflow: hidden;
             background: linear-gradient(160deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.34) 55%, rgba(255,255,255,0.20) 100%);
-            backdrop-filter: blur(22px) saturate(180%);
-            -webkit-backdrop-filter: blur(22px) saturate(180%);
+            backdrop-filter: blur(22px) saturate(180%); -webkit-backdrop-filter: blur(22px) saturate(180%);
             border: 1px solid rgba(255,255,255,0.55);
             box-shadow: 0 10px 34px rgba(15,23,42,0.14), inset 0 1px 1px rgba(255,255,255,0.8), inset 0 -14px 20px -14px rgba(255,255,255,0.35);
-            overflow: hidden;
         }
         .liquid-glass::before {
-            content: '';
-            position: absolute; inset: 0;
+            content: ''; position: absolute; inset: 0; mix-blend-mode: overlay; pointer-events: none;
             background: linear-gradient(115deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,0) 72%, rgba(255,255,255,0.30) 100%);
-            mix-blend-mode: overlay;
-            pointer-events: none;
         }
         .liquid-glass::after {
-            content: '';
-            position: absolute; top: 0; left: 10%; right: 10%; height: 1px;
+            content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.95), transparent);
         }
         .dark .liquid-glass {
@@ -294,357 +231,74 @@
             box-shadow: 0 10px 34px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.12), inset 0 -14px 20px -14px rgba(255,255,255,0.05);
         }
 
-        @keyframes achFadeIn {
-            from { opacity: 0; transform: translateY(8px) scale(0.96); }
-            to   { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        /* New front card zooms + fades in from the depth position it was just occupying —
-           straight forward motion, no sideways slide, so the stack always reads as
-           cards sitting directly behind one another. */
-        @keyframes achRiseFromRight {
-            from { opacity: 0.55; transform: translateY(14px) scale(0.95); }
-            to   { opacity: 1;    transform: translateY(0) scale(1); }
-        }
-        @keyframes achRiseFromLeft {
-            from { opacity: 0.32; transform: translateY(26px) scale(0.90); }
-            to   { opacity: 1;    transform: translateY(0) scale(1); }
-        }
+        @keyframes achFadeIn { from { opacity: 0; transform: translateY(8px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes achRiseFromRight { from { opacity: 0.55; transform: translateY(14px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes achRiseFromLeft { from { opacity: 0.32; transform: translateY(26px) scale(0.90); } to { opacity: 1; transform: translateY(0) scale(1); } }
         .ach-anim-fade { animation: achFadeIn 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
         .ach-anim-next { animation: achRiseFromRight 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
         .ach-anim-prev { animation: achRiseFromLeft 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
-        /* Peek cards ease into their depth position too, so the whole stack feels alive */
         .ach-peek { transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease; }
 
         .ach-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 20;
-            width: 46px;
-            height: 46px;
-            border-radius: 9999px;
-            background: #fff;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-            align-items: center;
-            justify-content: center;
-            color: #F59E0B;
-            cursor: pointer;
-            border: 1px solid rgba(0,0,0,0.06);
-            transition: all 0.2s ease;
-            display: flex;
+            position: absolute; top: 50%; transform: translateY(-50%); z-index: 20;
+            width: 46px; height: 46px; border-radius: 9999px; background: #fff;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18); align-items: center; justify-content: center;
+            color: #F59E0B; cursor: pointer; border: 1px solid rgba(0,0,0,0.06); transition: all 0.2s ease; display: flex;
         }
         .dark .ach-arrow { background: #172033; border-color: rgba(255,255,255,0.08); }
         .ach-arrow:hover { background: #F59E0B; color: #fff; }
         .ach-arrow.ach-disabled { opacity: 0.25; pointer-events: none; }
         .ach-arrow-left { left: -2px; }
         .ach-arrow-right { right: -2px; }
-        @media (min-width: 480px) {
-            .ach-arrow-left { left: -18px; }
-            .ach-arrow-right { right: -18px; }
-        }
+        @media (min-width: 480px) { .ach-arrow-left { left: -18px; } .ach-arrow-right { right: -18px; } }
 
-        .achievement-desc-clamp {
-            display: -webkit-box;
-            line-clamp: 3;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
+        .achievement-desc-clamp { display: -webkit-box; line-clamp: 3; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
-
-        /* Activities: "view all" modal transitions */
         #activities-modal-content { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
         #activities-modal.open-modal #activities-modal-content { transform: scale(1); opacity: 1; }
         #activities-modal-backdrop { transition: opacity 0.3s ease; opacity: 0; }
         #activities-modal.open-modal #activities-modal-backdrop { opacity: 1; }
 
-        /* Achievements: mobile touch tuning */
-        @media (max-width: 639px) {
-            .ach-arrow { display: none; } /* replaced by swipe gestures on touch */
-        }
-        @media (hover: none) {
-            .achievement-card { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; touch-action: pan-y; }
-        }
+        @media (max-width: 639px) { .ach-arrow { display: none; } }
+        @media (hover: none) { .achievement-card { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; touch-action: pan-y; } }
         .ach-swipe-hint { display: none; }
-        @media (hover: none) and (max-width: 639px) {
-            .ach-swipe-hint { display: block; }
+        @media (hover: none) and (max-width: 639px) { .ach-swipe-hint { display: block; } }
+
+        /* RECENT — coverflow-style hero slideshow */
+        .recent-slide {
+            position: absolute; top: 0; left: 50%; width: 82%; height: 100%;
+            transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.9s ease;
+            will-change: transform, opacity;
         }
+        .recent-slide .bg-fill {
+            position: absolute; inset: 0;
+            background-size: cover; background-position: center;
+            filter: blur(22px) brightness(0.6) saturate(120%); transform: scale(1.15);
+        }
+        .recent-slide .fg-content {
+            position: absolute; inset: 0; display: flex; flex-direction: column;
+        }
+        .recent-slide .fg-content img {
+            max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 4px;
+        }
+        .text-shadow-sm { text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
+
+        .recent-arrow-left  { left: -8px; top: 50%; }
+        .recent-arrow-right { right: -8px; top: 50%; }
+        @media (min-width: 480px) { .recent-arrow-left  { left: -18px; } .recent-arrow-right { right: -18px; } }
+        .recent-dot {
+            width: 7px; height: 7px; border-radius: 9999px; background: rgba(156,163,175,0.4);
+            border: none; padding: 0; cursor: pointer; transition: background 0.3s ease, width 0.3s ease;
+        }
+        .recent-dot.active { background: #F59E0B; width: 18px; }
     </style>
 </head>
 <body class="bg-white dark:bg-brand-dark text-gray-900 dark:text-gray-100 font-sans">
 
-    <!-- Intro Overlay: particle-formation animation -->
+    <!-- Intro Overlay -->
     <div id="intro-container">
         <canvas id="particle-canvas"></canvas>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', startEchoIntroAnimation);
-
-        function startEchoIntroAnimation() {
-            const canvas = document.getElementById('particle-canvas');
-            const ctx = canvas.getContext('2d', { alpha: false });
-            const introContainer = document.getElementById('intro-container');
-
-            document.body.style.overflow = 'hidden';
-
-            let logicalWidth, logicalHeight;
-            let particles = [];
-
-            // Slow, continuous, water-like glide — no overshoot, no snapping
-            const formDuration = 4733;      // time for dots to converge into the logo
-            const revealStart = 0.66;       // logo silhouette starts resolving earlier, over a longer, gentler window
-            const holdDuration = 1267;      // hold fully-formed logo with a soft glow pulse + zoom
-            const totalDuration = formDuration + holdDuration;
-
-            let startTime = null;
-            const dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-            function resize() {
-                logicalWidth = window.innerWidth;
-                logicalHeight = window.innerHeight;
-                canvas.width = logicalWidth * dpr;
-                canvas.height = logicalHeight * dpr;
-                ctx.setTransform(1, 0, 0, 1, 0, 0);
-                ctx.scale(dpr, dpr);
-            }
-            window.addEventListener('resize', resize);
-            resize();
-
-            // ---------------------------------------------------------
-            // 1. VECTOR RECREATION OF THE LOGO (crisp at any resolution)
-            // ---------------------------------------------------------
-            const logoSize = 600;
-            const tempCanvas = document.createElement('canvas');
-            const tempCtx = tempCanvas.getContext('2d', { willReadFrequently: true });
-            tempCanvas.width = logoSize;
-            tempCanvas.height = logoSize;
-
-            const cx = logoSize / 2;
-            const cy = logoSize / 2 - 48;
-
-            const orangeColor = '#FFB300';
-            const whiteColor = '#FFFFFF';
-
-            function drawCrescent(context, x, y, width, height, facing, color) {
-                context.fillStyle = color;
-                context.beginPath();
-                if (facing === 'left') {
-                    context.moveTo(x, y - height / 2);
-                    context.bezierCurveTo(x + width, y - height / 3, x + width, y + height / 3, x, y + height / 2);
-                    context.bezierCurveTo(x + width * 0.5, y + height / 3, x + width * 0.5, y - height / 3, x, y - height / 2);
-                } else {
-                    context.moveTo(x, y - height / 2);
-                    context.bezierCurveTo(x - width, y - height / 3, x - width, y + height / 3, x, y + height / 2);
-                    context.bezierCurveTo(x - width * 0.5, y + height / 3, x - width * 0.5, y - height / 3, x, y - height / 2);
-                }
-                context.fill();
-            }
-
-            const s = logoSize / 500;
-            drawCrescent(tempCtx, cx - 95 * s, cy, 25 * s, 80 * s, 'right', whiteColor);
-            drawCrescent(tempCtx, cx - 135 * s, cy, 30 * s, 110 * s, 'right', whiteColor);
-            drawCrescent(tempCtx, cx + 95 * s, cy, 25 * s, 80 * s, 'left', orangeColor);
-            drawCrescent(tempCtx, cx + 135 * s, cy, 30 * s, 110 * s, 'left', orangeColor);
-
-            tempCtx.fillStyle = orangeColor;
-            tempCtx.beginPath();
-            tempCtx.arc(cx, cy, 68 * s, 0, Math.PI * 2);
-            tempCtx.fill();
-
-            tempCtx.globalCompositeOperation = 'destination-out';
-            tempCtx.fillRect(cx - 75 * s, cy - 12 * s, 150 * s, 24 * s);
-
-            tempCtx.globalCompositeOperation = 'source-over';
-            tempCtx.fillRect(cx - 10 * s, cy + 12 * s, 115 * s, 20 * s);
-
-            tempCtx.fillStyle = whiteColor;
-            tempCtx.font = `900 ${90 * s}px "Arial Black", Arial, sans-serif`;
-            tempCtx.textAlign = 'center';
-            tempCtx.textBaseline = 'top';
-            if (tempCtx.letterSpacing !== undefined) tempCtx.letterSpacing = `${3 * s}px`;
-            tempCtx.fillText('ECHO', cx, cy + 126 * s);
-
-            // ---------------------------------------------------------
-            // 2. PARTICLE MAP — sampled evenly across the logo for a
-            //    clean, well-distributed dot formation (not purely random)
-            // ---------------------------------------------------------
-            const imgData = tempCtx.getImageData(0, 0, logoSize, logoSize).data;
-            const scale = (logicalWidth < 600) ? (logicalWidth * 0.72) / logoSize : (logoSize > logicalHeight * 0.8 ? (logicalHeight * 0.6) / logoSize : 1);
-            const offsetX = (logicalWidth - (logoSize * scale)) / 2;
-            const offsetY = (logicalHeight - (logoSize * scale)) / 2;
-
-            const candidates = [];
-            const gridStep = 3;
-            for (let y = 0; y < logoSize; y += gridStep) {
-                for (let x = 0; x < logoSize; x += gridStep) {
-                    const index = (y * logoSize + x) * 4;
-                    const alpha = imgData[index + 3];
-                    const r = imgData[index], g = imgData[index + 1], b = imgData[index + 2];
-                    if (alpha > 60 && (r > 10 || g > 10 || b > 10)) {
-                        candidates.push({ x, y, r, g, b });
-                    }
-                }
-            }
-            for (let i = candidates.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
-            }
-
-            const targetParticleCount = Math.min(candidates.length, logicalWidth < 600 ? 130 : 200);
-            const chosen = candidates.slice(0, targetParticleCount);
-
-            const centerTX = (cx * scale) + offsetX;
-            const centerTY = (cy * scale) + offsetY;
-            const maxRadius = Math.max(logicalWidth, logicalHeight) * 0.75;
-
-            chosen.forEach(({ x, y, r, g, b }) => {
-                const targetX = (x * scale) + offsetX;
-                const targetY = (y * scale) + offsetY;
-
-                const angle = Math.random() * Math.PI * 2;
-                const dist = maxRadius * (0.55 + Math.random() * 0.55);
-                const startX = centerTX + Math.cos(angle) * dist;
-                const startY = centerTY + Math.sin(angle) * dist;
-
-                const bow = 0.18 + Math.random() * 0.22;
-                const midX = (startX + targetX) / 2;
-                const midY = (startY + targetY) / 2;
-                const nx = -(targetY - startY);
-                const ny = (targetX - startX);
-                const nlen = Math.hypot(nx, ny) || 1;
-                const cpX = midX + (nx / nlen) * dist * bow * (Math.random() > 0.5 ? 1 : -1);
-                const cpY = midY + (ny / nlen) * dist * bow * (Math.random() > 0.5 ? 1 : -1);
-
-                const distFromCenter = Math.hypot(targetX - centerTX, targetY - centerTY);
-                const maxDistFromCenter = Math.hypot(logoSize * scale / 2, logoSize * scale / 2) + 1;
-                const radialDelay = (1 - distFromCenter / maxDistFromCenter) * 0.35;
-                const jitterDelay = Math.random() * 0.25;
-
-                const travelDist = Math.hypot(targetX - startX, targetY - startY) || 1;
-                const dirX = (targetX - startX) / travelDist;
-                const dirY = (targetY - startY) / travelDist;
-                const windPerpX = -dirY;
-                const windPerpY = dirX;
-                const windAmp = dist * (0.06 + Math.random() * 0.10);
-                const windFreq = 0.8 + Math.random() * 1.1;
-                const windPhase = Math.random() * Math.PI * 2;
-
-                particles.push({
-                    targetX, targetY, startX, startY, cpX, cpY,
-                    windPerpX, windPerpY, windAmp, windFreq, windPhase,
-                    color: `rgb(${r}, ${g}, ${b})`,
-                    size: (Math.random() * 1.6 + 1.1) * scale,
-                    delay: Math.min(radialDelay + jitterDelay, 0.55)
-                });
-            });
-
-            function easeOutExpo(t) {
-                return t >= 1 ? 1 : 1 - Math.pow(2, -10 * t);
-            }
-            function smoothstep(t) {
-                return t * t * (3 - 2 * t);
-            }
-
-            requestAnimationFrame(animate);
-
-            // ---------------------------------------------------------
-            // 3. ANIMATION ENGINE
-            // ---------------------------------------------------------
-            function animate(timestamp) {
-                if (!startTime) { startTime = timestamp; }
-                const elapsed = timestamp - startTime;
-
-                ctx.globalCompositeOperation = 'source-over';
-                ctx.globalAlpha = 1;
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.22)';
-                ctx.fillRect(0, 0, logicalWidth, logicalHeight);
-
-                if (elapsed < formDuration) {
-                    const progress = elapsed / formDuration;
-
-                    let revealT = 0;
-                    if (progress > revealStart) {
-                        revealT = (progress - revealStart) / (1 - revealStart);
-                        ctx.globalAlpha = smoothstep(revealT);
-                        ctx.globalCompositeOperation = 'source-over';
-                        ctx.drawImage(tempCanvas, offsetX, offsetY, logoSize * scale, logoSize * scale);
-                    }
-
-                    ctx.globalCompositeOperation = 'lighter';
-                    const dotFadeOut = 1 - smoothstep(revealT);
-
-                    particles.forEach(p => {
-                        let pProgress = (progress - p.delay) / (1 - p.delay);
-                        pProgress = Math.max(0, Math.min(pProgress, 1));
-                        if (pProgress <= 0) return;
-
-                        const eased = easeOutExpo(pProgress);
-                        const inv = 1 - eased;
-
-                        const baseX = (inv * inv * p.startX) + (2 * inv * eased * p.cpX) + (eased * eased * p.targetX);
-                        const baseY = (inv * inv * p.startY) + (2 * inv * eased * p.cpY) + (eased * eased * p.targetY);
-
-                        const decay = (1 - eased) * (1 - eased);
-                        const wind = Math.sin(pProgress * p.windFreq * Math.PI * 2 + p.windPhase) * p.windAmp * decay;
-                        const currentX = baseX + p.windPerpX * wind;
-                        const currentY = baseY + p.windPerpY * wind;
-
-                        const fadeIn = smoothstep(Math.min(pProgress / 0.2, 1)) * dotFadeOut;
-                        if (fadeIn <= 0.001) return;
-
-                        ctx.fillStyle = p.color;
-                        ctx.globalAlpha = fadeIn * 0.35;
-                        ctx.beginPath();
-                        ctx.arc(currentX, currentY, p.size * 2.4, 0, Math.PI * 2);
-                        ctx.fill();
-
-                        ctx.globalAlpha = fadeIn;
-                        ctx.beginPath();
-                        ctx.arc(currentX, currentY, p.size * 1.2, 0, Math.PI * 2);
-                        ctx.fill();
-                    });
-
-                    requestAnimationFrame(animate);
-
-                } else if (elapsed < totalDuration) {
-                    const holdProgress = (elapsed - formDuration) / holdDuration;
-                    const pulse = 0.85 + Math.sin(holdProgress * Math.PI) * 0.15;
-                    const zoomScale = 1 + easeOutExpo(Math.min(holdProgress / 0.9, 1)) * 0.12;
-
-                    ctx.save();
-                    ctx.translate(centerTX, centerTY);
-                    ctx.scale(zoomScale, zoomScale);
-                    ctx.translate(-centerTX, -centerTY);
-
-                    ctx.globalAlpha = 1;
-                    ctx.globalCompositeOperation = 'source-over';
-                    ctx.drawImage(tempCanvas, offsetX, offsetY, logoSize * scale, logoSize * scale);
-
-                    ctx.globalCompositeOperation = 'lighter';
-                    ctx.globalAlpha = (pulse - 0.85) * 1.2;
-                    ctx.filter = 'blur(6px)';
-                    ctx.drawImage(tempCanvas, offsetX, offsetY, logoSize * scale, logoSize * scale);
-                    ctx.filter = 'none';
-                    ctx.restore();
-
-                    requestAnimationFrame(animate);
-
-                } else {
-                    // Cinematic zoom + fade out, then reveal the page content
-                    introContainer.style.transform = 'scale(1.35)';
-                    introContainer.style.opacity = '0';
-
-                    document.querySelectorAll('.page-enter').forEach(el => el.classList.add('show'));
-
-                    setTimeout(() => {
-                        introContainer.remove();
-                        document.body.style.overflow = 'auto';
-                    }, 2250);
-                }
-            }
-        }
-    </script>
 
     <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-5 right-5 z-[9998] flex items-center gap-3 px-5 py-4 bg-gray-900 dark:bg-gray-800 text-white rounded-xl shadow-2xl border border-gray-700 translate-y-24 opacity-0">
@@ -666,9 +320,7 @@
                 </button>
             </div>
             <div class="p-5 sm:p-6 overflow-y-auto flex-1 scroll-list bg-gray-50 dark:bg-[#0f1423] rounded-b-2xl">
-                <div id="team-modal-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <!-- Members will be injected here -->
-                </div>
+                <div id="team-modal-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
             </div>
         </div>
     </div>
@@ -751,6 +403,21 @@
             <p class="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
                 A vibrant community of engineers, researchers, and creators building the future through electronic technologies at FISAT.
             </p>
+
+           <div class="mb-10 flex flex-col items-center reveal">
+                <p class="text-xs font-bold tracking-[0.25em] uppercase text-brand-orange mb-3">Recent</p>
+                <div class="relative w-[300px] sm:w-[420px] md:w-[520px] mx-auto" style="perspective:1400px;">
+                    <div id="recent-stage" class="relative w-full aspect-[4/5] mx-auto">
+                        <div class="flex items-center justify-center w-full h-full text-brand-orange/60">
+                            <i class="fas fa-circle-notch fa-spin text-3xl"></i>
+                        </div>
+                    </div>
+                    <button id="recent-prev" onclick="navigateRecent(-1)" class="ach-arrow recent-arrow-left hidden" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                    <button id="recent-next" onclick="navigateRecent(1)" class="ach-arrow recent-arrow-right hidden" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+                    <div id="recent-dots" class="flex justify-center gap-2 mt-4 hidden"></div>
+                </div>
+            </div>
+
             <div class="flex flex-wrap gap-4 justify-center">
                 <a href="#events" class="px-8 py-3 bg-brand-orange text-white font-bold rounded-full shadow-lg hover:bg-yellow-500 hover:shadow-brand-orange/40 hover:-translate-y-1 transition-all duration-300">Our Events</a>
                 <a href="#about" class="px-8 py-3 border-2 border-gray-300 dark:border-gray-600 font-bold rounded-full hover:border-brand-orange hover:text-brand-orange hover:-translate-y-1 transition-all duration-300">Learn More</a>
@@ -785,7 +452,7 @@
                 <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">The dedicated individuals driving innovation and excellence at ECHO.</p>
             </div>
 
-            <!-- 1. Student Members (Appears First) -->
+            <!-- 1. Student Members -->
             <div id="students-section" class="hidden mb-24">
                 <div id="members-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-5xl mx-auto">
                     <div class="col-span-full text-center py-16 text-gray-400">
@@ -795,7 +462,7 @@
                 </div>
             </div>
 
-            <!-- 2. Faculty Mentors (Appears Second) -->
+            <!-- 2. Faculty Mentors -->
             <div id="mentors-section" class="hidden relative">
                 <div class="pointer-events-none absolute -top-10 -left-10 w-64 h-64 rounded-full bg-brand-orange/30 blur-3xl"></div>
                 <div class="pointer-events-none absolute top-10 right-0 w-72 h-72 rounded-full bg-blue-400/20 dark:bg-blue-500/10 blur-3xl"></div>
@@ -806,7 +473,6 @@
                 <div id="mentors-grid" class="relative flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -836,6 +502,7 @@
             </p>
         </div>
     </section>
+
     <!-- Activities Section -->
     <section id="activities" class="py-24 bg-white dark:bg-brand-dark">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -950,6 +617,386 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
-</body>
-</html>
+    <script>
+        // Disable Right-Click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Disable F12 and common DevTool shortcuts
+        document.onkeydown = function(e) {
+          if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) {
+            return false;
+          }
+        };
+
+        const firebaseConfig = {
+            apiKey:            "AIzaSyDQVX_gTv-zp-tRAJfhmOAo8utuOAlxSjU",
+            authDomain:        "fisat-echo.firebaseapp.com",
+            projectId:         "fisat-echo",
+            storageBucket:     "fisat-echo.firebasestorage.app",
+            messagingSenderId: "671697672068",
+            appId:             "1:671697672068:web:e22a7092e85d47cb8befd1"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        function col(name) { return db.collection(name); }
+
+        function escHtml(str) {
+            if (!str) return '';
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        function avatarUrl(name) {
+            return `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'User')}&background=F59E0B&color=fff`;
+        }
+
+        function formatDate(isoDate) {
+            if (!isoDate) return '';
+            const [year, month, day] = isoDate.split('-');
+            const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            return `${parseInt(day, 10)} ${months[parseInt(month, 10) - 1]} ${year}`;
+        }
+
+        const state = { members: [], achievements: [], activities: [], events: [], recents: [], teamsData: {}, achievementsDirty: false };
+
+        function setupRealtimeListeners() {
+            col('members').orderBy('timestamp', 'desc').onSnapshot(
+                snap => { state.members = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderMembers(); },
+                err => console.error('[ECHO] Members error:', err)
+            );
+            col('achievements').orderBy('timestamp', 'desc').onSnapshot(
+                snap => { 
+                    state.achievements = snap.docs.map(d => ({ id: d.id, ...d.data() })); 
+                    state.achievementsDirty = true;
+                    renderAchievements(); 
+                },
+                err => console.error('[ECHO] Achievements error:', err)
+            );
+            col('activities').orderBy('timestamp', 'desc').onSnapshot(
+                snap => { state.activities = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderActivities(); },
+                err => console.error('[ECHO] Activities error:', err)
+            );
+            col('events').orderBy('timestamp', 'desc').onSnapshot(
+                snap => { state.events = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderEvents(); },
+                err => console.error('[ECHO] Events error:', err)
+            );
+            col('recents').orderBy('timestamp', 'desc').onSnapshot(
+                snap => { 
+                    let items = snap.docs.map(d => ({ id: d.id, ...d.data() })); 
+                    items.sort((a,b) => (a.priority||999) - (b.priority||999));
+                    state.recents = items; 
+                    renderRecent(); 
+                },
+                err => console.error('[ECHO] Recents error:', err)
+            );
+        }
+
+        setupRealtimeListeners();
+
+        function generateMemberCardHtml(m, i, isReveal = false) {
+            const hasLink = !!m.profileLinkUrl;
+            let badgeIcon = 'fas fa-link', badgeClass = 'portfolio', tooltipText = m.name;
+            if(hasLink) {
+                if(m.profileLinkType === 'linkedin') { badgeIcon = 'fab fa-linkedin-in'; badgeClass = 'linkedin'; tooltipText = 'View LinkedIn'; }
+                else if(m.profileLinkType === 'portfolio') { badgeIcon = 'fas fa-briefcase'; badgeClass = 'portfolio'; tooltipText = 'View Portfolio'; }
+                else if(m.profileLinkType === 'college') { badgeIcon = 'fas fa-university'; badgeClass = 'college'; tooltipText = 'College Profile'; }
+            }
+            
+            const animationClasses = isReveal ? 'glow-card reveal' : 'hover:-translate-y-1 hover:shadow-lg transition-all duration-300';
+            const transitionStyle = isReveal ? `style="transition-delay:${i * 80}ms;"` : '';
+
+            return `
+            <div class="member-card-wrapper bg-white dark:bg-brand-card rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row items-center sm:justify-between gap-3 sm:gap-4 group ${hasLink ? 'has-link' : ''} ${animationClasses}" ${transitionStyle} ${hasLink ? `onclick="window.open('${escHtml(m.profileLinkUrl)}','_blank','noopener')"` : ''}>
+                ${hasLink ? `<div class="profile-badge ${badgeClass}"><i class="${badgeIcon} text-xs"></i></div><div class="member-tooltip">${tooltipText}</div>` : ''}
+                
+                <div class="member-img-wrap w-20 h-20 sm:w-16 sm:h-16 rounded-full flex-shrink-0 border-2 border-gray-200 dark:border-gray-700 shadow-sm relative overflow-hidden order-first sm:order-last mb-2 sm:mb-0">
+                    <img src="${escHtml(m.image || avatarUrl(m.name))}" alt="${escHtml(m.name)}" class="absolute inset-0 w-full h-full object-cover object-top" onerror="this.src='${avatarUrl(m.name)}'">
+                </div>
+
+                <div class="flex-1 min-w-0 text-center sm:text-left w-full">
+                    <h3 class="text-base sm:text-lg font-bold group-hover:text-brand-orange transition-colors break-words whitespace-normal leading-tight">${escHtml(m.name)}</h3>
+                    <p class="text-xs sm:text-sm text-brand-orange font-medium mt-1 break-words whitespace-normal leading-tight">${escHtml(m.role)}</p>
+                </div>
+            </div>`;
+        }
+
+        function renderMembers() {
+            const faculty  = state.members.filter(m => m.memberType === 'faculty').sort((a,b) => (a.priority||999) - (b.priority||999));
+            const students = state.members.filter(m => m.memberType !== 'faculty').sort((a,b) => (a.priority||999) - (b.priority||999));
+
+            const individuals = students.filter(m => m.displayFormat !== 'team');
+            const teamMembers = students.filter(m => m.displayFormat === 'team');
+            
+            state.teamsData = {};
+            teamMembers.forEach(m => {
+                const tName = m.teamName || 'Other Team';
+                if(!state.teamsData[tName]) state.teamsData[tName] = [];
+                state.teamsData[tName].push(m);
+            });
+
+            const mentorSection   = document.getElementById('mentors-section');
+            const mentorsGrid     = document.getElementById('mentors-grid');
+            const studentsSection = document.getElementById('students-section');
+            const membersGrid     = document.getElementById('members-grid');
+
+            studentsSection.classList.remove('hidden');
+            if (students.length === 0) {
+                membersGrid.innerHTML = `<div class="col-span-full text-center py-16 text-gray-400">No team members added yet.</div>`;
+            } else {
+                let htmlContent = '';
+
+                if (individuals.length > 0) {
+                    htmlContent += individuals.map((m, i) => generateMemberCardHtml(m, i, true)).join('');
+                }
+
+                const teamNames = Object.keys(state.teamsData);
+                if (teamNames.length > 0) {
+                    const teamsCardsHtml = teamNames.map((tName, i) => {
+                        const team = state.teamsData[tName];
+                        const displayAvatars = team.slice(0, 4).map(m => `<img src="${escHtml(m.image || avatarUrl(m.name))}" class="w-10 h-10 rounded-full border-2 border-white dark:border-brand-card -ml-3 first:ml-0 object-cover" onerror="this.src='${avatarUrl(m.name)}'">`).join('');
+                        const extraCount = team.length > 4 ? `<div class="w-10 h-10 rounded-full border-2 border-white dark:border-brand-card bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-300 flex items-center justify-center text-xs font-bold -ml-3 z-10">+${team.length-4}</div>` : '';
+                        
+                        return `
+                        <div class="h-full bg-gradient-to-br from-gray-50 to-gray-100 dark:from-brand-card dark:to-[#172033] rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-200 dark:border-gray-700 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:border-brand-orange transition-all duration-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group reveal" style="transition-delay:${i * 80}ms;" onclick="openTeamModal('${escHtml(tName)}')">
+                            <div class="w-full sm:w-auto sm:flex-1 pr-0 sm:pr-2 min-w-0">
+                                <h3 class="text-lg sm:text-xl font-bold mb-1.5 text-gray-800 dark:text-gray-100 group-hover:text-brand-orange transition-colors break-words line-clamp-2">${escHtml(tName)}</h3>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 font-medium">${team.length} Member${team.length !== 1 ? 's' : ''}</p>
+                            </div>
+                            <div class="flex items-center justify-between w-full sm:w-auto mt-2 sm:mt-0 pl-0 sm:pl-3 flex-shrink-0">
+                                <div class="flex flex-shrink-0">${displayAvatars}${extraCount}</div>
+                                <div class="ml-5 w-10 h-10 rounded-full bg-brand-orange/10 text-brand-orange flex items-center justify-center group-hover:bg-brand-orange group-hover:text-white transition-colors flex-shrink-0 shadow-sm"><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                        </div>`;
+                    }).join('');
+
+                    htmlContent += `
+                        <div class="col-span-full mt-10 mb-4 pt-10 border-t border-gray-200 dark:border-gray-800 reveal">
+                            <h4 class="text-2xl font-bold text-center mb-8">Specialized Teams</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">${teamsCardsHtml}</div>
+                        </div>
+                    `;
+                }
+
+                membersGrid.innerHTML = htmlContent;
+            }
+
+            if (faculty.length > 0) {
+                mentorSection.classList.remove('hidden');
+                mentorsGrid.innerHTML = faculty.map((m, i) => {
+                    const hasLink = !!m.profileLinkUrl;
+                    let badgeIcon = 'fas fa-link', badgeClass = 'portfolio', tooltipText = m.name;
+                    if(hasLink) {
+                        if(m.profileLinkType === 'linkedin') { badgeIcon = 'fab fa-linkedin-in'; badgeClass = 'linkedin'; tooltipText = 'View LinkedIn'; }
+                        else if(m.profileLinkType === 'portfolio') { badgeIcon = 'fas fa-briefcase'; badgeClass = 'portfolio'; tooltipText = 'View Portfolio'; }
+                        else if(m.profileLinkType === 'college') { badgeIcon = 'fas fa-university'; badgeClass = 'college'; tooltipText = 'College Profile'; }
+                    }
+
+                    return `
+                    <div class="mentor-card rounded-2xl p-6 flex flex-col items-center text-center reveal group w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-[320px] mx-auto ${hasLink ? 'has-link cursor-pointer' : ''}" 
+                         style="transition-delay:${i * 80}ms;" 
+                         ${hasLink ? `onclick="window.open('${escHtml(m.profileLinkUrl)}','_blank','noopener')"` : ''}>
+                        
+                        ${hasLink ? `<div class="profile-badge ${badgeClass}"><i class="${badgeIcon} text-xs"></i></div><div class="member-tooltip">${tooltipText}</div>` : ''}
+
+                        <div class="w-32 h-32 sm:w-40 sm:h-40 mb-5 rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 relative shrink-0 shadow-inner border border-gray-200 dark:border-gray-700">
+                            <img src="${escHtml(m.image || avatarUrl(m.name))}" alt="${escHtml(m.name)}" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" onerror="this.src='${avatarUrl(m.name)}'">
+                        </div>
+                        <div class="w-full">
+                            <h3 class="text-xl font-bold group-hover:text-brand-orange transition-colors mb-1 break-words">${escHtml(m.name)}</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 font-medium mb-2">${escHtml(m.role)}</p>
+                            ${m.description ? `<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-3">${escHtml(m.description)}</p>` : ''}
+                        </div>
+                    </div>
+                `}).join('');
+            } else {
+                mentorSection.classList.add('hidden');
+            }
+
+            setTimeout(() => document.querySelectorAll('#members .reveal').forEach(el => revealObserver.observe(el)), 50);
+        }
+
+        function openTeamModal(teamName) {
+            const team = state.teamsData[teamName];
+            if(!team) return;
+
+            document.getElementById('team-modal-title').textContent = teamName;
+            document.getElementById('team-modal-subtitle').textContent = `${team.length} Member${team.length !== 1 ? 's' : ''}`;
+            
+            const grid = document.getElementById('team-modal-grid');
+            grid.innerHTML = team.map((m, i) => generateMemberCardHtml(m, i, false)).join('');
+            
+            const modal = document.getElementById('team-modal');
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.add('open-modal');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTeamModal() {
+            const modal = document.getElementById('team-modal');
+            modal.classList.remove('open-modal');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        function buildPosterPlaceholder(name) {
+            return `
+                <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 px-6 text-center">
+                    <div class="w-12 h-12 rounded-xl bg-brand-orange/20 flex items-center justify-center mb-3">
+                        <i class="fas fa-star text-brand-orange text-xl"></i>
+                    </div>
+                    <p class="text-gray-800 dark:text-white font-bold text-base leading-tight line-clamp-2">${escHtml(name)}</p>
+                </div>`;
+        }
+
+        function renderEvents() {
+            const grid = document.getElementById('events-grid');
+            if (state.events.length === 0) {
+                grid.innerHTML = `<div class="w-full text-center py-16 text-gray-400"><i class="fas fa-calendar-star text-4xl mb-3 block opacity-30"></i>No events posted yet. Check back soon!</div>`;
+                return;
+            }
+
+            grid.innerHTML = state.events.map((ev, i) => {
+                const statusClass = ev.status === 'ongoing' ? 'event-status-ongoing' : ev.status === 'completed' ? 'event-status-completed' : 'event-status-upcoming';
+                const statusLabel = ev.status === 'ongoing' ? 'Ongoing' : ev.status === 'completed' ? 'Completed' : 'Upcoming';
+                const statusDot   = ev.status === 'ongoing' ? '<span class="inline-block w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>' : '';
+                
+                const placeholderHtml = buildPosterPlaceholder(ev.name);
+                
+                const posterHtml = ev.poster
+                    ? `<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 mb-5 flex-shrink-0 shadow-inner">
+                           <div class="absolute inset-0 z-0 flex items-center justify-center">${placeholderHtml}</div>
+                           <img src="${escHtml(ev.poster)}" alt="poster" class="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300" onerror="this.style.opacity='0';">
+                       </div>`
+                    : `<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 mb-5 flex-shrink-0 shadow-inner">${placeholderHtml}</div>`;
+
+                const dateHtml = ev.date ? `<p class="text-xs text-gray-400 mt-1"><i class="fas fa-calendar-alt mr-1"></i>${formatDate(ev.date)}</p>` : '';
+                const btnHtml = (ev.btnLabel && ev.btnUrl)
+                    ? `<a href="${escHtml(ev.btnUrl)}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-2.5 mt-5 bg-brand-orange hover:bg-yellow-500 text-white font-bold rounded-xl shadow-lg hover:shadow-brand-orange/40 hover:-translate-y-0.5 transition-all duration-300 self-start text-sm w-full justify-center">
+                          ${escHtml(ev.btnLabel)} <i class="fas fa-arrow-right text-xs"></i>
+                       </a>` : '';
+
+                return `
+                <div class="event-card bg-white dark:bg-brand-card p-5 reveal w-full max-w-[360px]" style="transition-delay:${i * 100}ms;">
+                    ${posterHtml}
+                    <div class="flex-1 flex flex-col justify-between w-full">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 flex-wrap mb-3">
+                                <span class="event-status-badge ${statusClass}">${statusDot} ${statusLabel}</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold leading-snug">${escHtml(ev.name)}</h3>
+                            ${dateHtml}
+                        </div>
+                        ${btnHtml}
+                    </div>
+                </div>`;
+            }).join('');
+
+            setTimeout(() => document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el)), 50);
+        }
+
+        let achIndex = 0;
+        let achAnimDir = 0;
+
+        function renderAchievements() {
+            const stage = document.getElementById('achievements-list');
+            const counter = document.getElementById('ach-counter');
+            if (state.achievements.length === 0) {
+                stage.innerHTML = `<div class="text-center py-16 text-gray-400 w-full">Achievements will appear here soon.</div>`;
+                if (counter) counter.classList.add('hidden');
+                updateAchArrows();
+                return;
+            }
+            if (achIndex >= state.achievements.length) achIndex = 0;
+            if (achIndex < 0) achIndex = state.achievements.length - 1;
+
+            const n = state.achievements.length;
+            const a = state.achievements[achIndex];
+            const hasLink = !!a.link;
+            const dateStr = a.date ? `<span class="text-xs text-gray-400 ml-3"><i class="fas fa-calendar-alt mr-1"></i>${formatDate(a.date)}</span>` : '';
+            const imageHtml = a.image
+                ? `<div class="w-full h-56 sm:h-64 rounded-2xl overflow-hidden bg-white/40 dark:bg-black/25 flex-shrink-0 shadow-inner mb-4 flex items-center justify-center">
+                       <img src="${escHtml(a.image)}" alt="${escHtml(a.title)}" class="max-w-full max-h-full object-contain" onerror="this.parentElement.style.display='none';">
+                   </div>`
+                : '';
+            const animClass = achAnimDir === 1 ? 'ach-anim-next' : achAnimDir === -1 ? 'ach-anim-prev' : 'ach-anim-fade';
+
+            const buildGhost = (idx, sideClass) => {
+                const g = state.achievements[idx];
+                if (!g) return '';
+                return `
+                    <div class="ach-card-slot ach-peek ${sideClass} liquid-glass" aria-hidden="true">
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold mb-1 truncate text-gray-900 dark:text-gray-100">${escHtml(g.title)}</h3>
+                            <p class="text-xs text-brand-orange font-medium truncate"><i class="fas fa-users mr-1.5"></i>${escHtml(g.names || '')}</p>
+                        </div>
+                    </div>`;
+            };
+
+            let ghostsHtml = '';
+            if (n === 2) {
+                ghostsHtml = buildGhost((achIndex + 1) % n, 'ach-peek-right');
+            } else if (n > 2) {
+                ghostsHtml = buildGhost((achIndex - 1 + n) % n, 'ach-peek-left')
+                           + buildGhost((achIndex + 1) % n, 'ach-peek-right');
+            }
+
+            stage.innerHTML = `
+                ${ghostsHtml}
+                <div class="ach-card-slot ach-front liquid-glass achievement-card ${animClass} p-6 group cursor-pointer"
+                     onclick="openAchievementModal(${achIndex})">
+                    ${imageHtml}
+                    <div class="flex-1 min-w-0">
+                        <h3 class="text-xl font-bold mb-1 group-hover:text-brand-orange transition-colors">${escHtml(a.title)} ${hasLink ? `<i class="fas fa-external-link-alt text-xs text-gray-400 ml-2"></i>` : ''}</h3>
+                        <p class="text-sm text-brand-orange font-medium mb-3"><i class="fas fa-users mr-1.5"></i>${escHtml(a.names)}${dateStr}</p>
+                        <p class="text-gray-700 dark:text-gray-200 leading-relaxed text-sm achievement-desc-clamp">${escHtml(a.description)}</p>
+                    </div>
+                </div>`;
+            achAnimDir = 0;
+
+            if (counter) {
+                counter.classList.remove('hidden');
+                counter.innerHTML = state.achievements.length > 1
+                    ? `${achIndex + 1} / ${state.achievements.length}`
+                    : '';
+            }
+            updateAchArrows();
+        }
+
+        function navigateAchievement(dir) {
+            if (state.achievements.length <= 1) return;
+            achAnimDir = dir > 0 ? 1 : -1;
+            achIndex = (achIndex + dir + state.achievements.length) % state.achievements.length;
+            renderAchievements();
+        }
+
+        function updateAchArrows() {
+            const prev = document.getElementById('ach-prev');
+            const next = document.getElementById('ach-next');
+            if (!prev || !next) return;
+            const onlyOne = state.achievements.length <= 1;
+            prev.classList.toggle('ach-disabled', onlyOne);
+            next.classList.toggle('ach-disabled', onlyOne);
+        }
+
+        function openAchievementLink(i) {
+            const a = state.achievements[i];
+            if (!a || !a.link) return;
+            window.open(a.link, '_blank', 'noopener');
+        }
+
+        function openAchievementModal(i) {
+            const a = state.achievements[i];
+            if (!a) return;
+
+            document.getElementById('achievement-modal-title').textContent = a.title || '';
+            document.getElementById('achievement-modal-names').innerHTML = a.names ? `<i class="fas fa-users mr-1.5"></i>${escHtml(a.names)}` : '';
+            const dateEl = document.getElementById('achievement-modal-date');
+            if (a.date) { dateEl.innerHTML = `<i class="fas fa-calendar-alt mr-1.5"></i>${formatDate(a.date)}`; dateEl.classList.remove('hidden'); }
+            else { dateEl.textContent = ''; dateEl.classList.add('hidden'); }
+            document.getElementById('achievement-modal-desc').textContent = a.description || '';
+
+            const imgWrap = document.getElementById('achievement-modal-image-wrap');
+            const img = document.getElementById('achievement-modal-im
