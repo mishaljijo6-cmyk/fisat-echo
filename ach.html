@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECHO</title>
+  <link rel="icon" href="./images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="./images/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="./images/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+  <style>
+:root {
+  --darkblue: #000c26;
+  --yellowgreen: rgb(255, 166, 0);
+  --white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.nav-link { position: relative; }
+.nav-link::after {
+  content: ''; position: absolute; width: 0; height: 2px;
+  bottom: -4px; left: 0; background: #F59E0B; transition: width 0.3s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+.logo .hidelogo {
+    display: none;
+  }
+}
+
+
+.container{
+ display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.hero {
+  /* existing styles */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 90vh;
+  padding: 2rem;
+  animation: fadeIn 1.2s ease-in;
+}
+
+
+body {
+  background-position-x: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url('./images/bgnd.png');
+  color: var(--yellowgreen);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 90vh;
+  padding: 2rem;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.hero h2 {
+  color: #ffffff;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: slideDown 1s ease-out;
+}
+
+.hero p {
+  color: #ffffff8c;
+  font-size: 1.25rem;
+  max-width: 600px;
+  line-height: 1.5;
+  animation: slideUp 1s ease-out 0.5s;
+  animation-fill-mode: both;
+}
+
+.hero .buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.hero button {
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--yellowgreen);
+  color: var(--darkblue);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.hero button:hover {
+  transform: scale(1.05);
+  background-color: var(--white);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.learn-more {
+  background: linear-gradient(to right, #01174b, #000000);
+  padding: 4rem 2rem;
+  background-color: var(--darkblue);
+  color: var(--yellowgreen);
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.learn-more h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  animation: slideDown 0.8s ease-out;
+}
+
+.learn-more p {
+  color: aliceblue;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 1rem auto;
+  animation: slideUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #646464;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: rgb(255, 153, 0);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.team-section {
+  margin-bottom: 30px;
+}
+
+.team-section h2 {
+  font-size: 1.8rem;
+  color: #ffffff;
+
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.member-list {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.member-list li {
+  padding: 8px 0;
+
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #777;
+  font-size: 0.9rem;
+}
+.member-card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(3, 0, 25, 0.642);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 500px;
+  margin: 10px autp;
+}
+
+.member-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
+}
+
+.member-details {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.member-name {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.member-role {
+  font-size: 1rem;
+  color: orange;
+  
+  font-weight: bold;
+}
+
+
+.member-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 247, 0, 0.784);
+}
+
+.card-container {
+  display: contents;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.lmb{
+  background: linear-gradient(to right, #01174b, #000000);
+  transition: color 0.3s;
+}
+
+
+
+.contact-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #000006cb;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgb(0, 0, 0);
+}
+
+.contact-container h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact-container .tagline {
+  text-align: center;
+  font-size: 1rem;
+  color: #a8a8a8;
+  margin-bottom: 30px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #8e8e8e;
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical;
+}
+button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: var(--yellowgreen);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(102, 66, 0);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact-container {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+
+
+.vip-container {
+  background: #0000005c;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  box-shadow: 0 8px 16px rgba(0, 179, 255, 0.1);
+  text-align: center;
+}
+
+.vip-container h2 {
+  margin-bottom: 2rem;
+  color: var(--yellowgreen);
+  font-size: 2rem;
+}
+
+.vip-box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.vip-card {
+  background: #00000091;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.vip-card:hover {
+  transform: translateY(-5px);
+}
+
+.vip-card img {
+  width: 80%;
+  height: 150px;
+  object-fit: cover;
+  border-color: 2px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.vip-card h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.vip-card p {
+  font-size: 0.9rem;
+  color: #858585;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222;
+  padding: 1rem 2rem;
+  color: #fff;
+  position: relative;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  color: var(--yellowgreen);
+  text-decoration: none;
+  font-size: 1rem;
+}
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    background: #000000da;
+    backdrop-filter: blur(5px);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 325px;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  #menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+nav .logo::after{
+background-color: #00000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 40px auto 20px;
+      color: #ffffffe1;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background-color: #ff9d00;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .achievement-section {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .achievement-card {
+      display: flex;
+      align-items: center;
+      background: rgba(11, 15, 30, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      padding: 24px;
+      gap: 20px;
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 16px 40px rgba(255, 157, 0, 0.18);
+      border-color: rgba(255, 157, 0, 0.35);
+    }
+
+    /* For profile-style image and name */
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 4px;
+    }
+
+    .profile-image {
+      width: 110px;
+      height: 110px;
+      border-radius: 18px;
+      object-fit: cover;
+      background: #ffffff;
+      padding: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-name {
+      margin-top: 10px;
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 1.05rem;
+      text-align: center;
+    }
+
+    .achievement-image {
+      width: 35%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .achievement-content {
+      padding: 0 6px;
+      width: 100%;
+    }
+
+    .achievement-title {
+      font-size: 1.35rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #ff9d00;
+    }
+
+    .achievement-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    @media (max-width: 768px) {
+      .achievement-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-container {
+        margin: 0 0 15px 0;
+      }
+
+      .achievement-image {
+        width: 100%;
+        height: 200px;
+      }
+    }
+
+
+
+
+
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(11, 15, 30, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 16px 40px rgba(255, 157, 0, 0.18);
+      border-color: rgba(255, 157, 0, 0.35);
+    }
+
+    .image-container {
+      width: 100%;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+    }
+
+    .image-container img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card-description {
+      padding: 15px;
+      text-align: center;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.report-section {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.report-section h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #ffb700;
+}
+
+.report-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: rgba(226, 226, 226, 0.934);
+}
+
+.report-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px;
+  border-bottom: 1px solid #494837;
+  align-items: center;
+}
+
+.report-title {
+  font-size: 18px;
+}
+
+.view-link {
+  font-size: 14px;
+  color: #0077cc;
+  text-decoration: none;
+  border: 1px solid #007fd9;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.view-link:hover {
+  background-color: #0077cc;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+ .grid-wrapper {
+      display: grid;
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .image-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      background: rgba(11, 15, 30, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+    }
+
+    .image-row img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .image-row img:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .image-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .grid-wrapper-cisc {
+      display: grid;
+      gap: 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .image-row-cisc {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      background: rgba(11, 15, 30, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+    }
+
+    .image-row-cisc img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .image-row-cisc img:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .image-row-cisc {
+        grid-template-columns: 1fr;
+      }
+    }   
+
+@keyframes fadeInUp {
+  from {  
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#F59E0B',
+              dark: '#0B0F19',
+              card: '#111827',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body id="home" class="pt-24 bg-white dark:bg-brand-dark text-gray-900 dark:text-gray-100 font-sans overflow-x-hidden">
+  <nav class="index-navbar fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-brand-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 page-enter">
+    <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[72px]">
+        <a href="./index.html#home" class="flex items-center gap-3 md:gap-4 group cursor-pointer">
+          <img src="https://lh3.googleusercontent.com/d/1aFFlIwdpDMN-gA4J1w1QKDNFZ_AX4QRa" alt="ECHO Logo" class="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+          <span class="w-px h-9 bg-gray-300 dark:bg-gray-700 flex-shrink-0"></span>
+          <img src="https://lh3.googleusercontent.com/d/1rhsqMzNgzvkWdiGReadhYmFgovshvsXy" alt="FISAT Logo" class="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+          <div class="hidden lg:flex flex-col justify-center leading-tight border-l-2 border-gray-300 dark:border-gray-700 pl-4 ml-1">
+            <div class="font-bold text-[11px] md:text-xs tracking-widest text-gray-900 dark:text-gray-100 uppercase">Department of Electronics</div>
+            <div class="font-bold text-[11px] md:text-xs tracking-widest text-gray-900 dark:text-gray-100 uppercase">And Communication Engineering</div>
+          </div>
+        </a>
+        <div class="hidden md:flex items-center gap-5 xl:gap-6">
+          <a href="./index.html#home" class="nav-link text-sm font-medium hover:text-brand-orange transition-colors">Home</a>
+          <a href="./index.html#events" class="nav-link text-sm font-medium hover:text-brand-orange transition-colors">Events</a>
+          <a href="./index.html#members" class="nav-link text-sm font-medium hover:text-brand-orange transition-colors">Members</a>
+          <a href="./ach.html" class="nav-link text-sm font-medium hover:text-brand-orange transition-colors">Achievements</a>
+          <a href="./index.html#activities" class="nav-link text-sm font-medium hover:text-brand-orange transition-colors">Activities</a>
+          <a href="./index.html#about" class="nav-link text-sm font-medium hover:text-brand-orange transition-colors">About</a>
+          <a href="https://fisat.ac.in/" class="nav-link text-sm font-medium hover:text-brand-orange transition-colors">FISAT</a>
+
+          <button id="theme-toggle" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" title="Toggle dark/light mode">
+            <i class="fas fa-moon dark:hidden text-gray-600"></i>
+            <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+          </button>
+        </div>
+        <button id="theme-toggle-mobile" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <i class="fas fa-moon dark:hidden text-gray-600"></i>
+          <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+        </button>
+        <button id="nav-toggle" type="button" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors ml-1" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden flex-col border-t border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-brand-dark/95 backdrop-blur-md">
+      <div class="flex flex-col px-4 py-3 gap-1">
+        <a href="./index.html#home" class="mobile-nav-link text-sm font-medium py-2.5 px-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-orange transition-colors">Home</a>
+        <a href="./index.html#events" class="mobile-nav-link text-sm font-medium py-2.5 px-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-orange transition-colors">Events</a>
+        <a href="./index.html#members" class="mobile-nav-link text-sm font-medium py-2.5 px-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-orange transition-colors">Members</a>
+        <a href="./ach.html" class="mobile-nav-link text-sm font-medium py-2.5 px-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-orange transition-colors">Achievements</a>
+        <a href="./index.html#activities" class="mobile-nav-link text-sm font-medium py-2.5 px-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-orange transition-colors">Activities</a>
+        <a href="./index.html#about" class="mobile-nav-link text-sm font-medium py-2.5 px-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-orange transition-colors">About</a>
+        <a href="https://fisat.ac.in/" class="mobile-nav-link text-sm font-medium py-2.5 px-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brand-orange transition-colors">FISAT</a>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ <h2 class="section-title">Patents From Electronics and Communication Department</h2>
+  <div class="achievement-section">
+
+
+   
+    
+    <div class="achievement-card">
+      <div class="profile-container">
+        <img class="profile-image" src="./ach/jeslin.jpg" alt="Profile">
+        <div class="profile-name">Jeslin P Jo</div>
+      </div>
+      <div class="achievement-content">
+        <div class="achievement-title">Real-Time Health Monitoring System: Portable ECG & SpO2 with Cloud-Based Doctor interaction </div>
+        <div class="achievement-description">
+          This patent introduces a portable ECG and SpO2 monitoring device that enables real-time cardiac health monitoring. It features ECG waveform acquisition and blood oxygen level mesurements, allowing users to monitor their health at home or on the go, with cloud-based doctor interaction for continuous healthcare support.
+        </div>
+      </div>
+    </div>
+
+        <div class="achievement-card">
+      <div class="profile-container">
+        <img class="profile-image" src="./ach/noble.jpg" alt="Profile">
+        <div class="profile-name">Noble G</div>
+      </div>
+      <div class="achievement-content">
+        <div class="achievement-title">A micro controller based low-cost fire wood stove & automated bed veil tensioning system</div>
+        <div class="achievement-description">
+This innovation combines energy efficiency with healthcare utility, offering smart solutions for rural cooking and automated mosquito net management        </div>
+      </div>
+    </div>
+    
+
+    <div class="achievement-card">
+      <div class="profile-container">
+        <img class="profile-image" src="./ach/stud1.jpg" alt="Profile">
+        <div class="profile-name">Nivedhitha D</div>
+        <img class="profile-image" src="./ach/stud2.jpg" alt="Profile">
+        <div class="profile-name">Sneha Saji</div>
+      </div>
+      <div class="profile-container">
+        <img class="profile-image" src="./ach/stud3.jpg" alt="Profile">
+        <div class="profile-name">Kavya O</div>
+        <img class="profile-image" src="./ach/jilu.jpg" alt="Profile">
+        <div class="profile-name">Jilu George</div>
+        <img class="profile-image" src="./ach/stud4.jpg" alt="Profile">
+        <div class="profile-name">Krishna Nandha P K</div>
+      </div>
+      
+      <div class="achievement-content">
+        <div class="achievement-title">Loud Cell Based Smart Security and Anti-Theft Alert Alarm Sytem and Application</div>
+        <div class="achievement-description">
+          This patent features an innovative anti-theft flooring system that integrates a load cell with an ESP32 microcontroller to detect unauthorized access attempts, offering enhanced security and alert functionalities
+        </div>
+      </div>
+    </div>
+
+
+
+
+     <div class="achievement-card">
+      <div class="profile-container">
+        <img class="profile-image" src="./ach/ambili.jpg" alt="Profile">
+        <div class="profile-name">Ambili A R</div>
+        
+      </div>
+            <div class="profile-container">
+        <img class="profile-image" src="./ach/sreevidya.jpg" alt="Profile">
+        <div class="profile-name">Sreevidya P</div>
+      </div>
+      <div class="achievement-content">
+        <div class="achievement-title">Bug Detector for Cars </div>
+        <div class="achievement-description">
+Developed by faculty members Sreevidya P and Ambili A R, this tool identifies potential petrol tank-damaging bugs, promising practical solutions for car maintenance.
+        </div>
+      </div>
+    </div>
+
+
+
+    
+  </div>
+
+  
+
+  <!-- Group Contributions -->
+  <h2 class="section-title">Special Awards</h2>
+
+  
+  <div class="achievement-section">
+    
+    <div class="achievement-card">
+      <div class="profile-container">
+        <img class="profile-image" src="./ach/neena.jpg" alt="Profile">
+        <div class="profile-name">Neena K A</div>
+      </div>
+      <div class="profile-container">
+        <img class="profile-image" src="./ach/anil.jpg" alt="Profile">
+        <div class="profile-name">Anil Kumar</div>
+      </div>
+      <div class="achievement-content">
+        <div class="achievement-title">Best Paper Presentation Award at SSITCON-2024</div>
+        <div class="achievement-description">
+Ms. Neena K A and Dr. Anil Kumar M N, faculty members of the ECE department, were awarded the "Best Paper Presenter" award for their paper titled "A Lightweight Deep Learning Framework for Brain Tumour Classification from Compressed MRI Images" at the International Conference on Software, Systems, and Information Technology (SSITCON-2024). The conference was held on 18th–19th October 2024, at Sri Siddhartha Institute of Technology, Tumakuru.
+        </div>
+      </div>
+  
+    </div>
+
+
+    
+    <div class="achievement-card">
+      
+      <div class="profile-container">
+        <img class="profile-image" src="./ach/noble.jpg" alt="Profile">
+        <div class="profile-name">Noble G</div>
+      </div>
+      <div class="achievement-content">
+        <div class="achievement-title">First Prize at VLSID Design Contest</div>
+        <div class="achievement-description">
+Mr. Noble G., Assistant Professor in the Department of Electronics and Communication Engineering, FISAT, secured the first prize at the prestigious VLSID Design Contest—India’s premier conference in Very Large Scale Integration (VLSI) design. Competing against top researchers and industry professionals, his innovative work and technical brilliance earned him the top honor. This exceptional achievement brings great pride to the ECE department and highlights FISAT’s growing presence in advanced technology and research.
+      </div>
+    </div>
+    
+
+   
+
+  </div>
+  
+
+  <div class="achievement-card">
+      
+      <div class="profile-container">
+        <img class="profile-image" src="./ach/jilu.jpg" alt="Profile">
+        <div class="profile-name">Jilu George</div>
+      </div>
+      <div class="achievement-content">
+        <div class="achievement-title">ECE Faculty Recognized for NPTEL Mentorship</div>
+        <div class="achievement-description">
+Ms. Jilu George, Assistant Professor in the ECE Department, received a Certificate of Appreciation for her outstanding mentorship in the NPTEL Online Course "Introduction to Programming in C" during the January-
+
+April 2024 session. The department congratulates her for her dedication in guiding students through essential programming concepts.
+      </div>
+    </div>
+  </div>
+
+  <div class="achievement-card">
+      
+      <div class="profile-container">
+        
+
+      </div>
+      <div class="achievement-content">
+        <div class="achievement-title">Crowned @ KETCON</div>
+        <div class="achievement-description">
+      Students of ECE: <span style="font-weight: bolder;">Joshua Alex Mathews, Sandra Babu</span> and Faculty of ECE: <span style="font-weight: bolder;">Ambili A.R and Dhanya S</span>  received first prize in Paper Presentations for Electronics and Communication Engineering Track at the Kerala Technological Conference (KETKON 2024) organized by APJ Abdul Kalam Technological University. The paper was presented by Ambili A.R and Dhanya S at the event. The authors included are Muhammed Nihal T, Rosemary Thomas, Ambili A.R, Pankaj Kumar G, and Dr. Anilkumar M.N.
+        </div>
+    </div>
+  </div>
+<h2 class="section-title">CISC 2025</h2>
+<div class="grid-wrapper-cisc">
+    <div class="image-row-cisc">
+      <img src="ach\cisc25\cisc1.jpg" alt="Image 1A" />
+      <img src="ach\cisc25\cisc2.jpg" alt="Image 1B" />
+      <img src="ach\cisc25\cisc3.jpg" alt="Image 1C" />
+      <img src="ach\cisc25\cisc4.jpg" alt="Image 1D" />
+    </div>
+
+
+
+  <h2 class="section-title">TechSpark 2025</h2>
+<div class="grid-wrapper">
+    <div class="image-row">
+      <img src="./ach/July 2025/1.jpg" alt="Image 1A" />
+      <img src="./ach/July 2025/2.jpg" alt="Image 1B" />
+      <img src="./ach/July 2025/3.jpg" alt="Image 1C" />
+    </div>
+
+    <div class="image-row">
+      <img src="./ach/July 2025/11.jpg" alt="Image 2A" />
+      <img src="./ach/July 2025/22.jpg" alt="Image 2B" />
+      <img src="./ach/July 2025/33.jpg" alt="Image 2C" />
+    </div>
+
+    <div class="image-row">
+      <img src="./ach/July 2025/111.jpg" alt="Image 3A" />
+      <img src="./ach/July 2025/222.jpg" alt="Image 3B" />
+      <img src="./ach/July 2025/333.jpg" alt="Image 3C" />
+    </div>
+
+        <div class="image-row">
+      <img src="./ach/July 2025/1111.jpg" alt="Image 3A" />
+      <img src="./ach/July 2025/2222.jpg" alt="Image 3B" />
+      <img src="./ach/July 2025/3333.jpg" alt="Image 3C" />
+    </div>
+  </div>
+
+  <h2 class="section-title">Achievement Gallery</h2>
+ 
+    <!--<div class="card">
+      <div class="image-container">
+        <img src="ach/gallery/december 2025/IMG-20260120-WA0039.jpg" alt="Portrait">
+      </div>
+      <div class="card-description"> Disalfin K Sunny, S4 ECE, emerged as a finalist among the
+top R from over 000 participants in the Speak For India
+Debate Kerala Edition 2025-26. conducted by Federal
+Bank in association with Mathrubhumi.
+</div>
+    </div>-->
+  <div class="gallery">
+    <div class="card">
+      <div class="image-container">
+        <img src="ach/gallery/8b1c3d66-b476-4d13-a3d7-ad9daca9103a.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">NPTEL Achievers of 2025</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <img src="ach\gallery\november25\2bfd5147-4714-4f21-8d97-556a8977c1a0.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">Joyal Benny and Vinayak N G Secured the second position in the IDEATHON competition conducted as part  of ARCANE 2.0 , organised by ISTE, FISAT.</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <img src="ach\gallery\november25\08b03fbf-5287-4907-a8be-6db6d2374c87.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">NPTEL Toppers of 2025</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <img src="ach\gallery\november25\863ab1d1-191d-48b4-a099-681afb156154.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">Kevin Paulose, John Francy, Sourav V, and Joseph Raphel of S3 ECE B secured the second position in the PEAPL Competition conducted as part of ARCANE 2.0, organized by ISTE FISAT.</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <img src="ach\gallery\november25\3019af4a-a379-43fc-9dde-c66a45dc6489.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">Jerry George Antony, Hana Thajudheen, and Avinash (2021–2025 batch) received a funding of ₹25,000 from the Kerala Development and Innovation Strategic Council (K-DISC) for their project titled “Sign Medi Vision.” The project was under taken as part of the the Research Seed Money initiative of the FISAT Research Cell, mentored by Ms. Ambili A. R. Congrats to Ambili miss and students!</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <img src="ach\gallery\november25\c0763c17-85f9-481b-92a3-4e4663c4b1c6.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">The Department of Electronics and Communication Engineering at FISAT has signed an MoU with Gr8 Global India. Through this partnership, their Centre for Collaborative Research in Al and Robotics is being upgraded into an industry-sponsored laboratory, highlighting a focus on collaboration and innovation.</div>
+    </div>
+
+
+    <div class="card">
+      <div class="image-container">
+        <img src="ach/gallery/a2190256-4494-4dd5-be7c-6a5e2705cea0.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">Add on course top performers</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <img src="ach/gallery/25ecb.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">Toppers of S2 ECE B 2025</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <img src="ach/gallery/a30db362-4c30-480c-aae0-2fb66f055dd4.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">Toppers of S2 ECE A 2025</div>
+    </div>
+    
+
+    <div class="card">
+      <div class="image-container">
+        <img src="./ach/gallery/01c0f500-b4d5-4f18-b95f-734c425c886b.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">Toppers of S4 ECE 2025</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <img src="./ach/gallery/01c529c5-4b67-4cd3-82a3-86874d34ad11.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">Toppers of S6 ECE 2025</div>
+    </div>
+
+        <div class="card">
+      <div class="image-container">
+        <img src="./ach/gallery/00ae5757-0e39-4a60-a281-7ce913d7fe5d.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">4th place champion in the Orma International Speech Competition(Season 3)</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <img src="./ach/ach1.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">VIMAL M, N A MUHAMMED AJMAL, P S SURYANARAYANAN, MOHAMMAD IJLAL won first prize in IDEATHON-idea pitching competition organized by ECHO association of ECE Department, FISAT</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+
+        <img src="./ach/ach2.jpg" alt="Landscape">
+      </div>
+      <div class="card-description">Aleena Paul, Ann Mary Biju, and Farsana P J, S7 - Electronics & Communication Engineering, have emerged victorious in Kerala ASAP Dreamvestor 2.0</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <img src="./ach/ach3.jpg" alt="Another Portrait">
+      </div>
+      <div class="card-description">Thejas K N and Vimal M, Students of S8 ECE B secured first position in the Inter-Departmental Maths Quiz Competition for the P V Mathew Memorial Ever Rolling Trophy, Organised by Maths Club, FISAT.</div>
+    </div>
+
+
+<div class="card">
+      <div class="image-container">
+
+        <img src="./ach/ach4.jpg" alt="Landscape">
+      </div>
+      <div class="card-description">Rita Roy, Swathy S, Nivedhitha M, and Sona Rasheed from S7 ECE, guided by Mr. Noble G, secured a spot in the top 10 as they presented 'CloudDetect,' an FPGA-based cloud detection startup proposal, to experts from ISRO.</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <img src="./ach/ach5.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">IEEE Visionary Award</div>
+    </div>
+
+        <div class="card">
+      <div class="image-container">
+        <img src="./ach/ach6.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">Outstanding student leader in IEEE FISAT SB</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+
+        <img src="./ach/ach7.jpg" alt="Landscape">
+      </div>
+      <div class="card-description">Winners of the P.V MATHEW Memorial, English elocution competition</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+
+        <img src="./ach/ach8.jpg" alt="Landscape">
+      </div>
+      <div class="card-description">Students made significant contribution  in developing Semi-Humanoid  Robots to assist passengers and to control crowds in KOCHI METRO RAIL.</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+
+        <img src="./ach/ach9.jpg" alt="Landscape">
+      </div>
+      <div class="card-description">Ms. Lakshmi Menon from 2013-17 batch of ECE won the Miss South India title in the year 2018. She is currently an actress and a model.</div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+
+        <img src="./ach/ach10.jpg" alt="Landscape">
+      </div>
+      <div class="card-description">University rank holders during past academic years.</div>
+    </div>
+
+        <div class="card">
+      <div class="image-container">
+        <img src="./ach/ach11.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">Ms. Krishna C, alumni of FISAT had achieved AIR 139 in Indian Civil Services Exam .</div>
+    </div>
+
+            <div class="card">
+      <div class="image-container">
+        <img src="./ach/ach12.jpg" alt="Portrait">
+      </div>
+      <div class="card-description">Malavika Pradeep, Gate qualified candidate from FISAT.</div>
+    </div>
+
+
+    <div class="card">
+      <div class="image-container">
+
+        <img src="./ach/ach13.jpg" alt="Landscape">
+      </div>
+      <div class="card-description">Abhijith Pradeep (S5 ECE) of FISAT NSS Unit is all set to march on Rajpath as he has been selected to represent Kerala at the prestigious Republic Day Parade at Delhi in January, 2025.</div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+  <script>
+    if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    }
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+
+    // Mobile hamburger nav menu
+    (function setupMobileNav() {
+      const toggleBtn = document.getElementById('nav-toggle');
+      const menu = document.getElementById('mobile-menu');
+      if (!toggleBtn || !menu) return;
+      const icon = toggleBtn.querySelector('i');
+
+      function openMenu() {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      }
+      function closeMenu() {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+      function toggleMenu(e) {
+        e.stopPropagation();
+        if (menu.classList.contains('hidden')) openMenu(); else closeMenu();
+      }
+
+      toggleBtn.addEventListener('click', toggleMenu);
+      menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('click', (e) => {
+        if (!menu.classList.contains('hidden') && !menu.contains(e.target) && !toggleBtn.contains(e.target)) closeMenu();
+      });
+      window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMenu(); });
+    })();
+
+    // Skip index.html's intro animation only when navigating there from this
+    // achievements page's navbar (Home, Events, Members, Activities, About, logo).
+    // Links to ach.html itself and external links (FISAT) are left alone.
+    document.querySelectorAll('.index-navbar a[href*="index.html"]').forEach(link => {
+      link.addEventListener('click', () => {
+        sessionStorage.setItem('skipIntro', '1');
+      });
+    });
+  </script>
+</body>
+<footer>
+  <p>&copy; 2025-2026 ECHO</p>
+</footer>
+</body>
+
+</html>
