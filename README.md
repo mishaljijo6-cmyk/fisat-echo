@@ -1,2 +1,0 @@
-# fisat-echo
-fisat echo
